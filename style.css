@@ -1,0 +1,116 @@
+.page{
+    background-color: #deebd9;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding-top: 60px;
+    color: #222;
+}
+
+.main-title{
+    font-family: 'Playfair Display', serif;
+    color: #223322; 
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.subtitle{
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.card{
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    padding: 28px 40px;
+    border-radius: 10px;
+    box-shadow:
+    0 18px 30px rgba(0,0,0,0.12), 
+    0 2px 4px rgba(0,0,0,0.06);
+    text-align: left;
+
+}
+
+.tabs{
+    background: #e1efdf;
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    display: flex;
+    gap:8px;
+    
+}
+
+
+.tabs strong{
+    flex:1;
+    color:  #000;
+    text-align: center;
+    padding:5px;
+
+}
+.tabs a{
+    flex:1;
+    color: #2ba552;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    padding:5px;
+
+}
+
+.tabs a:hover{
+    text-decoration: underline;
+    background-color: white;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.03);
+    border: 1px solid #cfe4cc;
+
+}
+
+.form-box label{
+    display: block;
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 15px;
+    
+}
+
+.form-box input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 20px;
+}
+
+.form-box input:focus{
+    border-color: #33c05f;
+    outline: none;
+}
+
+.Form-button{
+    background-color: #33c05f;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 12px;
+    font-family: 'Poppins' ,sans-serif;
+    font-weight: bold;
+    margin-bottom: 50px;
+    border:1px solid #223322;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Form-button:hover{
+    background-color: #2ba552;
+    cursor: pointer;
+}
