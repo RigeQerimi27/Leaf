@@ -60,12 +60,11 @@
 
 }
 
-.tabs a:hover{
-    text-decoration: underline;
-    background-color: white;
-    box-shadow: inset 0 1px 0 rgba(0,0,0,.03);
-    border: 1px solid #cfe4cc;
-
+.tabs a.not-active.tab:hover {
+  text-decoration: underline;
+  background-color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.03);
+  border: 1px solid #cfe4cc;
 }
 
 .form-box label{
