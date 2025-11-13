@@ -1,3 +1,4 @@
+/*  Sign in, sign up */ 
 .page{
     background-color: #deebd9;
     font-family: 'Poppins', sans-serif;
@@ -125,16 +126,18 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #333;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #eef4ec
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 22px 40px;
+  background-color: #EAF3E4;
+
+  
+  border-bottom: 1px solid #D9E3D5;
 }
 
 .logo {
@@ -145,7 +148,7 @@ body {
 }
 
 .nav-links {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   display: flex;
   list-style: none;
   gap: 30px;
@@ -153,7 +156,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #536056;
   font-weight: 500;
   transition: color 0.3s;
 }
@@ -164,23 +167,47 @@ body {
 
 .icons {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
+.search-bar{
+  position:relative;
+  width: 250px;
+  height: 40px;
+  background-color: #F4F8F2;
+  border: 1px solid #D6E4D0;
+  border-radius: 30px;
+   display: flex;
+  align-items: center;
+  padding-left: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #2F3C33;
+}
+
+
+
 .icons img {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
 .hero {
-  background-color: #E0EEDC;
+  background-color: #deebd9;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 60px 40px;
-  max-width: 2200px;
-  margin: 0 auto;
+  justify-content: space-around;
+  padding: 80px 40px 120px;
+
+  gap:40px;
 }
 
 .hero-text {
@@ -190,17 +217,23 @@ body {
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
+  font-size: 54px;
+  line-height: 1.1;
   font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: #293D33;
+  color: #1F352A; 
+  margin-bottom: 18px;
 }
 
+.hero-title .highlight {
+  color: #2F9E4E; 
+  margin-bottom: 18px;
+}
+
+
 .hero-sub {
-  font-size: 16px;
-  margin-bottom: 30px;
-  color: #666;
+  font-size: 15px;
+  color: #6B756D;
+  margin-bottom: 28px;
 }
 
 .hero-buttons {
@@ -209,13 +242,12 @@ body {
 }
 
 .btn-green {
-  background-color: #329136;
+  background-color: #2F9E4E;
   color: white;
-  padding: 12px 25px;
+  padding: 12px 26px;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 28px;
   font-weight: 500;
-  transition: background-color 0.3s;
 }
 
 .btn-green:hover {
@@ -223,66 +255,63 @@ body {
 }
 
 .btn-outline {
+  background-color: #eef4ec ;
   border: 1px solid #2a7d2e;
   color: #2a7d2e;
   padding: 12px 25px;
   text-decoration: none;
   border-radius: 28px;
   font-weight: 500;
-  transition: all 0.3s;
+  
 }
 
 .btn-outline:hover {
   background-color: #2a7d2e;
   color: white;
 }
-
-.hero-img {
-  flex: 1;
-  text-align: center;
-}
-
 .hero-img img {
+  display: block;
+  width: 520px;             
   max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  border-radius: 32px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.18);
 }
 
 .top-picks {
-  padding: 130px 40px;
+  padding: 80px 40px 40px; 
   text-align: center;
-  background-color: #e0ebdd;
+  background-color: #eef4ec;
 }
 
 .top-picks h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  margin-bottom: 15px;
+  font-size: 50px;
   color: #293D33;
+  margin-bottom: 10px;
 }
 
 .section-text {
+  color: #6B756D;
   max-width: 600px;
   margin: 0 auto 40px;
-  color: #666;
 }
 
 .product-list {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 32px;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1080px; 
+  margin: 0 auto; 
 }
 
 .product {
-  background-color: #EEF4EC;
-  border-radius: 50px;
-  padding: 50px;
+  background-color: #FFFFFF;
   width: 280px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s;
+  padding: 20px;
+  border-radius: 40px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  
 }
 
 .product:hover {
@@ -291,42 +320,39 @@ body {
 
 .product-image {
   width: 100%;
-  height: 200px;
+  height: 190px;
   object-fit: cover;
-  border-radius: 28px;
-  margin-bottom: 15px;
+  border-radius: 24px;
+  margin-bottom: 14px;
 }
 
 .product-name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
+  margin-bottom: 6px;
 }
 
 .product-desc {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #6B756D;
   margin-bottom: 10px;
 }
 
 .product-price {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .product-button {
-  background-color: #E0EEDC;
-  color: #333;
-  border: none;
+  background-color: #EAF3E4;
   padding: 10px 20px;
-  border-radius: 28px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
   cursor: pointer;
   font-weight: 500;
-  width: 100%;
-  transition: background-color 0.3s;
+ 
 }
 
 .product-button:hover {
@@ -337,26 +363,28 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
-  padding: 120px 40px;
-  max-width: 2200px;
-  margin: 0 auto;
-  background-color: #e0ebdd;
+  padding: 40px 40px 80px; 
 }
 
 .info-card {
-  background-color: #EEF4EC;
-  border-radius: 50px;
-  padding: 50px;
-  text-align: center;
+  background-color: #FFFFFF;
   width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 40px 30px;
+  border-radius: 40px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  text-align: center;
+
+  
+  display: flex;
+  flex-direction: column;
 }
+
 
 .card-title {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #2a7d2e;
+  font-size: 22px;
+  color: #293D33;
+  margin-bottom: 10px;
 }
 
 .card-text {
@@ -365,27 +393,25 @@ body {
 }
 
 .btn-light {
-  display: inline-block;
-  border: 1px solid #2a7d2e;
-  color: #2a7d2e;
-  padding: 10px 20px;
+  border: 1px solid #2F9E4E;
+  padding: 10px 24px;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 40px;
+  color: #2F9E4E;
   font-weight: 500;
-  transition: all 0.3s;
+
 }
 
 .btn-light:hover {
   background-color: #2a7d2e;
   color: white;
 }
-
+/*  footer */ 
 .footer {
   display: flex;
   justify-content: space-between;
   padding: 60px 40px;
-  background-color: #6e9c5e;
-  color: rgb(60, 58, 58);
+  background-color: #DDEBD8;
 }
 
 .footer-left {
@@ -394,25 +420,24 @@ body {
 
 .footer-logo {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-size: 26px;
+  color: #293D33;
+  margin-bottom: 14px;
 }
 
 .footer-text {
-  color: rgb(60, 58, 58);
+  color: #6B756D;
+  font-size: 14px;
 }
 
 .footer-links {
-  font-family: 'Poppins';
   display: flex;
-  gap: 50px;
+  gap: 60px;
 }
 
 .footer-links h4 {
-  font-family: 'Poppins';
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 12px;
+  color: #293D33;
 }
 
 .footer-links ul {
@@ -424,40 +449,51 @@ body {
 }
 
 .footer-links a {
-  color: rgb(60, 58, 58);
   text-decoration: none;
-  transition: color 0.3s;
+  color: #6B756D;
+  font-size: 14px;
 }
 
 .footer-links a:hover {
-  color: rgb(60, 58, 58);
+  color: #2F9E4E;
 }
 
 .footer-social h4 {
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 12px;
+  color: #293D33;
 }
-
 .social-icons {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
+.social-icons a {
+  width: 50px;
+  height: 50px;
+  background-color: #DDEBD8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+
 .social-icons img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1);
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .copyright {
   text-align: center;
   padding: 20px;
-  background-color: #567b4a;
   color: rgb(60, 58, 58);
   font-size: 14px;
+  background-color: #DDEBD8;;
 }
 
-/* Responsive Design */
+/*  responsive */ 
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
