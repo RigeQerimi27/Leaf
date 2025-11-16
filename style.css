@@ -608,6 +608,93 @@ body {
   }
 }
 
+/*About Us*/
+.about {
+  background-color: #e2eddb;
+  text-align: center;
+  padding: 70px 20px;
+  border-bottom: 1px solid #dceed6;
+}
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #293D33;
+  margin-bottom: 10px;
+}
 
+.about p {
+  font-size: 15px;
+  color: #6B756D;
+
+}
+.mission{
+  background-color: #EEF4EC;
+  text-align:center;
+  padding: 100px 30px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #dceed6;
+  padding-top: 80px;
+}
+.mission h2{
+    font-family:'Playfair Display', serif;
+    font-size: 38px;
+    color: #293D33;
+    margin-bottom: 25px;
+}
+.mission p{
+    font-size: 15px;
+    color: #6B756D;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+.whychoose{
+    background-color: #eef4ec;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.whychoose h2 {
+    font-family: 'Playfair Display',serif;
+    font-size: 38px;
+    color: #1F352A;
+    margin-bottom: 10px;
+}
+.whychoose p {
+    font-size: 15px;
+    color: #6B756D;
+    margin-bottom: 20px;
+}
+.features{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+.feature{
+    width: 230px;
+    padding: 40px 25px ;
+    text-align: center;
+    padding-bottom: 150px;
+}
+.feature img{
+  width: 45px;
+  height: 45px;
+  margin-bottom: 18px; 
+}
+
+.feature h3 {
+    font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: #1F352A;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #6B756D;
+  line-height: 1.5;
+}
 
 
