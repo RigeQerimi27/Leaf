@@ -26,7 +26,7 @@
 }
 
 .card{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.419);
     width: 500px;
     margin: auto;
     padding: 28px 40px;
@@ -54,7 +54,9 @@
     color:  #000;
     text-align: center;
     padding:5px;
-
+    background-color: #f9fbf9a3;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10), 0 0 18px 6px rgba(0,0,0,0.04);    
 }
 .tabs a{
     flex:1;
@@ -68,7 +70,7 @@
 
 .tabs a.not-active.tab:hover {
   text-decoration: underline;
-  background-color: #ffffff;
+  background-color: #ffffff60;
   box-shadow: inset 0 1px 0 rgba(0,0,0,.03);
   border: 1px solid #cfe4cc;
 }
@@ -116,7 +118,7 @@
 }
 
 .Form-button:hover{
-    background-color: #2ba552;
+    background-color: #50dd7d;
     cursor: pointer;
 }
 
@@ -895,6 +897,118 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 
 
+}
+
+.contact-hero {
+  text-align: center;
+  padding: 70px 20px;
+  background-color: #e2eddb;
+}
+
+.contact-hero h1 {
+  font-size: 36px;
+  font-family: 'PlayDisplay', serif;
+}
+
+.contact-hero p {
+  max-width: 600px;
+  margin: 10px auto;
+  color: #5b6d63;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 40px;
+}
+
+.contact-info {
+  max-width: 320px;
+  margin-left: 50px;
+}
+
+.contact-info h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-family: '';
+}
+.contact-info p {
+  width: 600px;
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+  color: #1f352aca;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 0;
+}
+.info-box h3{
+  font-family: '';
+}
+.info-box p {
+  font-family: 'Poppins', sans-serif;
+  color: #1f352aca;
+}
+
+.info-box .icon {
+  width: 60px;
+  background: #dff0d9;
+  padding: 15px;
+  border-radius: 50%;
+  margin-top: -50px ;
+}
+
+.contact-form {
+  background: #ffffff;
+  padding: 30px;
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 400px;
+}
+
+.contact-form label {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d3ded4;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9fdf8;
+  font-family:'Poppins', sans-serif;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.btn-submit {
+  margin-top: 15px;
+  padding: 14px;
+  background-color: #2ebc6c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #24a15a;
 }
 
 
