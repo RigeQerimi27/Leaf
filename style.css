@@ -626,10 +626,15 @@ body {
 
 /*About Us*/
 .about {
-  background-color: #e2eddb;
+  background: linear-gradient(
+    to bottom,
+     #c7d9c0 0%,   
+    #deebd9 60%,
+    #e8efe6 100%
+  );
   text-align: center;
   padding: 70px 20px;
-  border-bottom: 1px solid #dceed6;
+  border-bottom: 1px solid #defad4;
 }
 .about h2 {
   font-family: 'Playfair Display', serif;
@@ -898,11 +903,16 @@ body {
 
 
 }
-
+/*Kontakti*/
 .contact-hero {
   text-align: center;
   padding: 70px 20px;
-  background-color: #e2eddb;
+  background: linear-gradient(
+    to bottom,
+     #c7d9c0 0%,   
+    #deebd9 60%,
+    #e8efe6 100%
+  );
 }
 
 .contact-hero h1 {
