@@ -152,7 +152,9 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 30px;
   font-weight: 600;
-  color: #293D33;
+    background: linear-gradient(90deg, #2F9E4E, #2f9e4e60);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .nav-links {
