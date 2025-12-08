@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipping Leaf</title>
+
+  <link rel="stylesheet" href="shippi.css">
+</head>
+
+<body>
+
+  <section class="shipping-section">
+    <div class="wrap">
+
+      <div class="shipping-header">
+        <div>
+          <h2 class="shipping-title">Shipping Information</h2>
+          <p class="shipping-subtitle">Fast, safe & reliable delivery for your skincare products.</p>
+        </div>
+      </div>
+
+      <div class="shipping-cards">
+
+        <article class="ship-card">
+          <svg class="ship-icon" viewBox="0 0 24 24" fill="none">
+            <rect x="1" y="3" width="13" height="11" rx="2" stroke="#2d4a2d" stroke-width="1.25"/>
+            <path d="M14 8h4l3 3v3" stroke="#2d4a2d" stroke-width="1.25"/>
+            <circle cx="7.5" cy="18" r="1.6" stroke="#2d4a2d" stroke-width="1.25"/>
+            <circle cx="18.5" cy="18" r="1.6" stroke="#2d4a2d" stroke-width="1.25"/>
+          </svg>
+          <h3>Fast Delivery</h3>
+          <p>Orders are processed within 24 hours. Local delivery in 24–72 hours depending on area.</p>
+        </article>
+
+        <article class="ship-card">
+          <svg class="ship-icon" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="7" width="20" height="5" rx="1" stroke="#2d4a2d" stroke-width="1.25"/>
+            <path d="M12 7v11" stroke="#2d4a2d" stroke-width="1.25"/>
+            <path d="M7 7c0-1.8 1.6-3 4-3s4 1.2 4 3" stroke="#2d4a2d" stroke-width="1.25"/>
+          </svg>
+          <h3>Free Shipping</h3>
+          <p>Free shipping for all orders above <strong>€25</strong>. Flat rates apply for smaller orders.</p>
+        </article>
+
+        <article class="ship-card">
+          <svg class="ship-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73L13 3.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="#2d4a2d" stroke-width="1.25"/>
+            <path d="M12 3v9" stroke="#2d4a2d" stroke-width="1.25"/>
+          </svg>
+          <h3>Secure Packaging</h3>
+          <p>Products are wrapped with protective material and boxed so they arrive in perfect condition.</p>
+        </article>
+
+      </div>
+
+      <div class="details-grid">
+        <div class="detail-box">
+          <h4>Inside City</h4>
+          <p class="helper">24–48 hours • <strong>€2.50</strong></p>
+        </div>
+
+        <div class="detail-box">
+          <h4>Nationwide</h4>
+          <p class="helper">2–4 days • <strong>€3.50</strong></p>
+        </div>
+
+        <div class="detail-box">
+          <h4>International</h4>
+          <p class="helper">5–10 days • <strong>€8–12</strong></p>
+        </div>
+      </div>
+
+      <div class="shipping-cta">
+        <div class="cta-pill">Tracking included</div>
+        <div class="cta-pill">Gift wrap available</div>
+        <div class="cta-pill">Return 14 days</div>
+      </div>
+
+      <h2 class="shipping-title" style="margin-top:40px;">Shipping Address</h2>
+      <p class="shipping-subtitle">Fill in the address where you'd like to receive your order.</p>
+
+      <div class="address-card">
+
+        <form id="shippingForm" class="address-form" autocomplete="on" novalidate>
+
+          <div>
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" type="text" required placeholder="Anna">
+          </div>
+
+          <div>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text" required placeholder="Smith">
+          </div>
+
+          <div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" required placeholder="+383 4xx xxx xxx">
+          </div>
+
+          <div>
+            <label for="street">Street Name</label>
+            <input id="street" name="street" type="text" required placeholder="Elm Street">
+          </div>
+
+          <div>
+            <label for="house">House No.</label>
+            <input id="house" name="house" type="text" required placeholder="12">
+          </div>
+
+          <div>
+            <label for="zip">Post / ZIP Code</label>
+            <input id="zip" name="zip" type="text" required placeholder="10000">
+          </div>
+
+          <div>
+            <label for="state">State</label>
+            <input id="state" name="state" type="text" placeholder="Region / State">
+          </div>
+
+          <div>
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" required placeholder="Pristina">
+          </div>
+
+          <div class="full">
+            <label for="note">Delivery Note (optional)</label>
+            <input id="note" name="note" type="text" placeholder="Doorbell code, leave at reception, etc.">
+          </div>
+
+          <div class="full save-row">
+            <label class="save-check">
+              <input id="saveAddr" type="checkbox">
+              <span>Save this address</span>
+            </label>
+
+            <button type="submit" id="saveBtn" class="btn-save">Save Address</button>
+          </div>
+
+        </form>
+
+        <div class="helper saved-info">
+          Saved addresses are stored locally in your browser (only visible on this device).
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
