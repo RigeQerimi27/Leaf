@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  background-color: #EAF3E4;
+  border-bottom: 1px solid #D9E3D5;
+  font-size: 18px;
+
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 600;
+    background: linear-gradient(90deg, #2F9E4E, #2f9e4e60);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #536056;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #9bd09e;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar{
+  position:relative;
+  width: 250px;
+  height: 40px;
+  background-color: #F4F8F2;
+  border: 1px solid #D6E4D0;
+  border-radius: 30px;
+   display: flex;
+  align-items: center;
+  padding-left: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 17px;
+  color: #2F3C33;
+}
+
+
+
+.icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+
+
+.about {
+  background: linear-gradient(
+    to bottom,
+     #c7d9c0 0%,   
+     #d8e7d2 60%,
+     #dce9d7 100%
+  );
+  text-align: center;
+  padding: 70px 20px;
+}
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #293D33;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 15px;
+  color: #6B756D;
+
+}
+.mission{
+      background: linear-gradient(
+    to bottom,
+     #dce9d7 0%,   
+    #e1ebdd 60%,
+    #e3ecdf 100%
+  );
+  text-align:center;
+  padding: 100px 30px;
+  padding-bottom: 100px;
+  padding-top: 80px;
+}
+.mission h2{
+    font-family:'Playfair Display', serif;
+    font-size: 38px;
+    color: #293D33;
+    margin-bottom: 25px;
+}
+.mission p{
+    font-size: 15px;
+    color: #6B756D;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+.whychoose{
+    background: linear-gradient(
+    to bottom,
+    #e3ecdf 0%,   
+    #ebf3e8 60%,
+    #eff6ec 100%
+    );
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.whychoose h2 {
+    font-family: 'Playfair Display',serif;
+    font-size: 38px;
+    color: #1F352A;
+    margin-bottom: 10px;
+}
+.whychoose p {
+    font-size: 15px;
+    color: #6B756D;
+    margin-bottom: 20px;
+}
+.features{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    background: linear-gradient(
+    to bottom,
+    #eff6ec 0%,   
+    #e6efe2 60%,
+    #d9e7d3 100%
+  );
+}
+.feature{
+    width: 230px;
+    padding: 40px 25px ;
+    text-align: center;
+    padding-bottom: 150px;
+    
+}
+.feature img{
+  width: 45px;
+  height: 45px;
+  margin-bottom: 18px; 
+}
+
+.feature h3 {
+    font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: #1F352A;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #6B756D;
+  line-height: 1.5;
+}
+
+
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #DDEBD8;
+}
+
+.footer-left {
+  max-width: 300px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #293D33;
+  margin-bottom: 14px;
+}
+
+.footer-text {
+  color: #6B756D;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links h4 {
+  margin-bottom: 12px;
+  color: #293D33;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #6B756D;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #2F9E4E;
+}
+
+.footer-social h4 {
+  margin-bottom: 12px;
+  color: #293D33;
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icons a {
+  width: 50px;
+  height: 50px;
+  background-color: #DDEBD8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.copyright {
+  text-align: center;
+  padding: 20px;
+  color: rgb(60, 58, 58);
+  font-size: 14px;
+  background-color: #DDEBD8;;
+}
+

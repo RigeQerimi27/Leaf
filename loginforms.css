@@ -1,0 +1,179 @@
+.page{
+    background-color: #deebd9;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    color: #222;
+    background-image: url("images/background2.jpg");
+    background-size: cover;   
+}
+
+.main-title{
+    font-family: 'Playfair Display', serif;
+    color: #223322; 
+    font-size: 28px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.subtitle{
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 24px;
+    text-align: center;
+
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.419);
+    width: 500px;
+    margin: auto;
+    padding: 28px 40px;
+    border-radius: 10px;
+    box-shadow:
+    0 18px 30px rgba(0,0,0,0.12), 
+    0 2px 4px rgba(0,0,0,0.06);
+    text-align: left;
+
+}
+
+.tabs{
+    background: #e1efdf;
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    gap:8px;
+    
+}
+
+
+.tabs strong{
+    flex:1;
+    color:  #000;
+    text-align: center;
+    padding:5px;
+    background-color: #f9fbf9a3;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10), 0 0 18px 6px rgba(0,0,0,0.04);    
+}
+.tabs a{
+    flex:1;
+    color: #2ba552;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    padding:5px;
+
+}
+
+.tabs a.not-active.tab:hover {
+  text-decoration: underline;
+  background-color: #ffffff60;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.03);
+  border: 1px solid #cfe4cc;
+}
+
+.form-box label{
+    display: block;
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 15px;
+    
+}
+
+.form-box input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 20px;
+}
+
+.form-box input:focus{
+    border-color: #33c05f;
+    outline: none;
+}
+
+.Form-button{
+    background-color: #33c05f;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 12px;
+    font-family: 'Poppins' ,sans-serif;
+    font-weight: bold;
+    margin-bottom: 50px;
+    border:1px solid #223322;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.Form-button:hover{
+    background-color: #50dd7d;
+    cursor: pointer;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+     .page {
+    padding-top: 60px;          
+    background-position: center;
+  }
+
+  .main-title {
+    font-size: 22px;           
+    margin-bottom: 4px;         
+  }
+
+  .subtitle {
+    font-size: 13px;            
+    margin-bottom: 16px;        
+    padding: 0 16px;   
+  }
+    
+  .card {
+    width: 90%;                
+    max-width: 360px;          
+    padding: 20px 18px;         
+    margin: 0 auto;             
+  }
+
+  .tabs strong,
+  .tabs a {
+    font-size: 14px;           
+    padding: 4px;               
+  }
+
+
+  .form-box label {
+    font-size: 14px;           
+    margin-top: 8px;            
+  }
+
+  .form-box input {
+    font-size: 14px;            
+    padding: 8px;              
+  }
+
+  .Form-button {
+    font-size: 15px;           
+    padding: 10px;             
+    margin-bottom: 32px;       
+  }
+}
+
+
+
+
