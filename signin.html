@@ -23,15 +23,17 @@
     <strong >Sign In</strong> <a href="signup.html" class="not-active tab">Sign Up</a>
    </p>
 
-   <form class="form-box">
+   <form class="form-box" id="loginForm">
    <label>Email Address:</label><br>
-   <input type="email" placeholder="you@email.com"><br>
+   <input type="email" id="email" placeholder="you@email.com"><br>
 
    <label>Password:</label><br>
-   <input type="password" placeholder="********"><br>
-
-   <button class="Form-button" type="submit">Sign in</button>
+   <input type="password" id="password" placeholder="********"><br>
+   <p id="msg"></p>
+   <button class="Form-button" type="button" onclick="validate()">Sign in</button>
    </form>
    </div>
+
+   <script src="main.js"></script>
 </body>
 </html>
