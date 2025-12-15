@@ -50,7 +50,14 @@
     </div>
 
     <div class="hero-img">
-      <img src="images/aloevera.jpg" alt="Beauty products">
+       <button type="button" class="hero-arrow left" onclick="changeHero(-1)">
+    ‹
+  </button>
+      <img src="images/aloevera.jpg" id="heroImage" alt="Beauty products">
+
+      <button type="button" class="hero-arrow right" onclick="changeHero(1)">
+    ›
+  </button> 
     </div>
 
 </section>
@@ -199,6 +206,9 @@
   <p class="copyright">
     © 2025 Leaf Skincare. All rights reserved.
   </p>
+
+
+  <script src="main.js"></script>
 
 </body>
 

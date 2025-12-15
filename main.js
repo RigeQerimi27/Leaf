@@ -33,3 +33,34 @@ function validate() {
 
 
 
+/*slideri te homepage*/
+
+let heroImages = [
+  "images/aloevera.jpg",
+  "images/hero2.jpg",
+  "images/hero3.jpg"
+];
+
+
+let index=0;
+
+function changeHero(step) {
+
+
+    index = index + step;
+
+    if (index < 0) {
+    index = heroImages.length - 1;
+  }
+
+    if (index > heroImages.length - 1) {
+    index = 0;
+  }
+
+   document.getElementById("heroImage").src = heroImages[index];
+
+}
+
+
+
+

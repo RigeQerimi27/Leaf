@@ -167,12 +167,35 @@ body {
   background-color: #2a7d2e;
   color: white;
 }
+
+.hero-img{
+  position: relative;
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
 .hero-img img {
-  display: block;
-  width: 520px;             
+  height: 340px;  
+  width: 520px;  
+  object-fit: cover;           
   max-width: 100%;
   border-radius: 32px;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.18);
+
+}
+
+.hero-arrow {
+  background: rgba(255, 255, 255, 0.573);
+  border: none;
+  font-size: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #2F9E4E;
 }
 
 .top-picks {
