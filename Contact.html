@@ -66,20 +66,20 @@
     </div>
   </div>
 
-  <form class="contact-form">
+  <form class="contact-form" id="contact-form">
     <label>Your Name</label>
-    <input type="text" placeholder="Leaf">
+    <input type="text" id="name" placeholder="Leaf">
 
     <label>Email Address</label>
-    <input type="email" placeholder="Hello@example.com">
+    <input type="email" id="email" placeholder="Hello@example.com">
 
     <label>Subject</label>
-    <input type="text" placeholder="How can we help?">
+    <input type="text" id="subject" placeholder="How can we help?">
 
     <label>Message</label>
-    <textarea placeholder="Tell us more about your inquiry..."></textarea>
-
-    <button type="submit" class="btn-submit">Send message</button>
+    <textarea id="message" placeholder="Tell us more about your inquiry..."></textarea>
+    <p id="msg"></p>
+    <button type="button" class="btn-submit" onclick="validate()">Send message</button>
   </form>
 </section>
 <footer class="footer">
@@ -125,7 +125,7 @@
   <p class="copyright">
     © 2025 Leaf Skincare. All rights reserved.
   </p>
-
+<script src="Contact.js"></script>
 </body>
 </html>
 
