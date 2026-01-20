@@ -39,8 +39,9 @@ body{
   font-family: 'Playfair Display', serif;
   font-size: 30px;
   font-weight: 600;
-    background: linear-gradient(90deg, #2F9E4E, #2f9e4e60);
+  background: linear-gradient(90deg, #2F9E4E, #2f9e4e60);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -391,3 +392,77 @@ input:focus,select:focus{
   background-color: #DDEBD8;
 }
 
+@media (max-width: 900px) {
+  
+ .navbar{
+    padding: 18px 24px;
+  }
+
+  .search-bar{
+    width: 200px;
+  }
+
+  .shipping-cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .details-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-links{
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar{
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-links{
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .search-bar{
+    width: 100%;
+  }
+
+  .shipping-title{
+    font-size: 26px;
+  }
+
+  .shipping-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .details-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .address-form{
+    grid-template-columns: 1fr;
+  }
+
+  .btn-save{
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .save-row{
+    flex-wrap: wrap;
+  }
+
+  .footer{
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .footer-links{
+    flex-direction: column;
+    gap: 24px;
+  }
+}
