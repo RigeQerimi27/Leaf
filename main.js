@@ -53,3 +53,4 @@ function changeHero(step) {
    document.getElementById("heroImage").src = heroImages[index];
 
 }
+

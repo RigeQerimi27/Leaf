@@ -1,28 +1,28 @@
 function validate(){
-    let email=document.getElementById("email").value; 
-    let name = document.getElementById("name").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
-   
-    let emailRegex= /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  
-   
-    let nameRegex= /^[A-Za-z\s]{3,}$/
-    
-    if(emailRegex.test(email)){
-        if(nameRegex.test(name)){
+  let email = document.getElementById("email").value; 
+  let name = document.getElementById("name").value;
+  let subject = document.getElementById("subject").value;
+  let message = document.getElementById("message").value;
 
-        
-        document.getElementById("msg").innerText="Valid!";
+  let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  
+  let nameRegex = /^[A-Za-z\s]{3,}$/;
 
-        document.getElementById("contact-form").action="homepage.html";
-        document.getElementById("contact-form").submit();
+  if(!emailRegex.test(email)){
+    document.getElementById("msg").innerText = "Email is not valid!";
+    return false;
+  }
 
-    }else{
-        document.getElementById('msg').innerText= "Name must be at least 3 letters!";
+  if(!nameRegex.test(name)){
+    document.getElementById("msg").innerText = "Name must be at least 3 letters!";
+    return false;
+  }
 
-    }
-    }else{
-        document.getElementById("msg").innerText="Email is not valid!";
-    }
+  if(subject.trim() === "" || message.trim() === ""){
+    document.getElementById("msg").innerText = "Subject and message are required!";
+    return false;
+  }
 
+  document.getElementById("msg").innerText = "Valid!";
+  return true; 
 }
+

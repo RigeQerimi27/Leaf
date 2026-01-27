@@ -1,0 +1,193 @@
+<?php
+declare(strict_types=1);
+
+session_start();
+
+require_once __DIR__ . '/database.php';
+require_once __DIR__ . '/contactmessage.php';
+
+
+
+$error = null;
+$success = null;
+
+
+if (isset($_POST['send'])) {
+
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+  
+    $emailRegex = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+    $nameRegex = "/^[A-Za-z\s]{3,}$/";
+
+    if (!preg_match($emailRegex, $email)) {
+        $error = "Email is not valid!";
+    } elseif (!preg_match($nameRegex, $name)) {
+        $error = "Name must be at least 3 letters!";
+    } elseif ($subject === '' || $message === '') {
+        $error = "Subject and message are required!";
+    } else {
+        
+
+        $db = new Database();
+        $conn = $db->getConnection();
+
+      
+        $contact = new ContactMessage($conn);
+
+        
+        $createdBy = $_SESSION['user'] ?? 'guest';
+
+       
+        $contact->create($name, $email, $subject, $message, $createdBy);
+
+        $success = "Message sent successfully!";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Leaf</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Leaf</div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="shop-bestsellers.html">Shop</a></li>
+        <li><a href="AboutUs.html">About</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...." class="search-input">
+    </div>
+
+    <div class="icons">
+      <a href="#"><img src="icons/shopping cart.jpg"></a>
+      <a href="#"><img src="icons/user.jpg"></a>
+    </div>
+</header>
+
+<section class="contact-hero">
+  <h1>Get in Touch</h1>
+  <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+</section>
+
+<section class="contact-section">
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+    <p>Fill out the form and our team will get back to you within 24 hours.</p>
+
+    <div class="info-box">
+      <img src="icons/email.png" class="icon">
+      <div>
+        <h3>Email</h3>
+        <p>Hello@leafskin.com</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <img src="icons/phone.png" class="icon">
+      <div>
+        <h3>Phone</h3>
+        <p>+383 48 123 123</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <img src="icons/location.png" class="icon">
+      <div>
+        <h3>Address</h3>
+        <p>Kolegji UBT<br>Prishtine - Dukagjini Center</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <form class="contact-form" id="contact-form" method="post" action="Contact.php" novalidate onsubmit="return validate()">
+
+    <label>Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Leaf">
+
+    <label>Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Hello@example.com">
+
+    <label>Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="How can we help?">
+
+    <label>Message</label>
+    <textarea id="message" name="message" placeholder="Tell us more about your inquiry..."></textarea>
+
+    <p id="msg">
+      <?php
+        if ($error) echo "<span style='color:red;'>$error</span>";
+        if ($success) echo "<span style='color:green;'>$success</span>";
+      ?>
+    </p>
+
+    <button type="submit" name="send" class="btn-submit">Send message</button>
+
+    
+  </form>
+</section>
+
+<footer class="footer">
+  <div class="footer-left">
+    <div class="footer-logo">Leaf</div>
+    <p class="footer-text">Natural beauty essentials for radiant, healthy skin.</p>
+  </div>
+
+  <div class="footer-links">
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="shop-bestsellers.html">All Products</a></li>
+        <li><a href="shop-bestsellers.html">Bestsellers</a></li>
+        <li><a href="#">New arrivals</a></li>
+        <li><a href="#">Gift sets</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.php">Contact us</a></li>
+        <li><a href="AboutUs.html">About us</a></li>
+        <li><a href="Shipping.html">Shipping info</a></li>
+        <li><a href="#">Returns</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <h4>Follow us</h4>
+    <div class="social-icons">
+      <a href="#"><img src="icons/instagram.jpg" alt="Instagram"></a>
+      <a href="#"><img src="icons/facebook.jpg" alt="Facebook"></a>
+      <a href="#"><img src="icons/tiktok.jpg" alt="TikTok"></a>
+    </div>
+  </div>
+</footer>
+
+<p class="copyright">
+  © 2025 Leaf Skincare. All rights reserved.
+</p>
+
+<script src="Contact.js"></script>
+</body>
+</html>
+
+
