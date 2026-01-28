@@ -1,121 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Manage Products</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="admin.css">
-</head>
-
-<body>
-<div class="admin-layout">
-
-<aside class="admin-sidebar">
-  <h2 class="admin-logo">Leaf</h2>
-  <ul class="admin-menu">
-    <li><a href="admin.html">Dashboard</a></li>
-    <li><a href="admin-homepage.html">Homepage</a></li>
-    <li class="active">Products</a></li>
-    <li><a href="admin-shop.html">Shop</a></li>
-    <li><a href="admin-about.html">About</a></li>
-    <li><a href="admin-contact.html">Contact</a></li>
-    <li><a href="admin-shipping.html">Shipping</a></li>
-  </ul>
-</aside>
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
+  <title>Manage Products</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaf Admin – CRUD</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
   <link rel="stylesheet" href="admin-crud.css">
 </head>
 
 <body>
-  <div class="page">
+  <div class="admin-layout">
 
-    <header class="hero">
-      <div>
-        <p class="eyebrow">ADMINISTRATOR PANEL</p>
-        <h1>ADMIN</h1>
-        <p class="subtitle">
-             Product management for Leaf Skincare      </div>
+    <aside class="admin-sidebar">
+      <h2 class="admin-logo">Leaf</h2>
+      <ul class="admin-menu">
+        <li><a href="admin.html">Dashboard</a></li>
+        <li><a href="admin-homepage.html">Homepage</a></li>
+        <li class="active"><a href="admin-products.html">Products</a></li>
+        <li><a href="admin-about.html">About</a></li>
+        <li><a href="admin-contact.html">Contact</a></li>
+        <li><a href="admin-shipping.html">Shipping</a></li>
+        <li><a href="admin-skintype.html">Skin Type</a></li>
+        <li><a href="admin-users.html">Users</a></li>
 
-      <div class="card stats">
-        <div>
-          <span class="stat-label">Total products</span>
-          <span class="stat-value">3</span>
-        </div>
-        <div>
-          <span class="stat-label">Database</span>
-          <span class="stat-value">leaf_db</span>
-        </div>
-      </div>
-    </header>
 
-    <section class="grid">
+      </ul>
+    </aside>
 
-      <div class="card form-card">
-        <h2>Add a new product</h2>
-        <p class="muted">Fill in the product details</p>
+    <main class="admin-main">
+      <div class="page">
 
-        <form class="product-form">
-          <label>
-            Product Name
-            <input type="text" placeholder="Product Name" required>
-          </label>
-
-          <label>
-            Description
-            <textarea rows="4" placeholder="Description" required></textarea>
-          </label>
-
-          <div class="two-columns">
-            <label>
-              Price (€)
-              <input type="number" step="0.01" placeholder="25.00">
-            </label>
-
-            <label>
-              Stock
-              <input type="number" placeholder="10">
-            </label>
+        <header class="hero">
+          <div>
+            <p class="eyebrow">ADMINISTRATOR PANEL</p>
+            <h1>ADMIN</h1>
+            <p class="subtitle">Product management for Leaf Skincare</p>
           </div>
-              <input type="file">
-             <br>
-             <br>
-          <button type="submit" class="primary">Create product</button>
-        </form>
+
+          <div class="card stats">
+            <div>
+              <span class="stat-label">Total products</span>
+              <span class="stat-value">3</span>
+            </div>
+            <div>
+              <span class="stat-label">Database</span>
+              <span class="stat-value">leaf_db</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="grid">
+
+          <div class="card form-card">
+            <h2>Add a new product</h2>
+            <p class="muted">Fill in the product details</p>
+
+            <form class="product-form">
+              <label>
+                Product Name
+                <input type="text" name="name" placeholder="Product Name" required>
+              </label>
+
+              <label>
+                Description
+                <textarea name="description" rows="4" placeholder="Description" required></textarea>
+              </label>
+
+              <div class="two-columns">
+                <label>
+                  Size
+                  <input type="text" name="size" placeholder="300 ml">
+                </label>
+
+                <label>
+                  Benefit
+                  <input type="text" name="benefit" placeholder="Stress relief">
+                </label>
+              </div>
+
+              
+              <div class="two-columns">
+                <label>
+                  Shop Page
+                  <select name="shop_page" required>
+                    <option value="">Select</option>
+                    <option value="bestsellers">Best sellers</option>
+                    <option value="skincare">Skincare</option>
+                    <option value="bodycare">Body care</option>
+                    <option value="bath-relax">Bath &amp; Relax</option>
+                  </select>
+                </label>
+
+                <label>
+                  Section
+                  <select name="shop_section" required>
+                    <option value="">Select</option>
+                    <option value="on-sale">On Sale</option>
+
+            
+                    <option value="bestsellers-skincare">Bestsellers - Skincare</option>
+                    <option value="bestsellers-bodycare">Bestsellers - Body care</option>
+                    <option value="bestsellers-bath-relax">Bestsellers - Bath &amp; Relax</option>
+
+                   
+                    <option value="cleansers">Cleansers</option>
+                    <option value="serums">Serums</option>
+                    <option value="moisturizers">Moisturizers</option>
+
+                    
+                    <option value="body-lotions">Body Lotions</option>
+                    <option value="body-scrubs">Body scrubs</option>
+                    <option value="body-oils">Body Oils</option>
+
+                    
+                    <option value="bath-soaks">Bath Soaks</option>
+                    <option value="bath-foams">Bath Foams</option>
+                    <option value="aromatherapy-mists">Aromatherapy Mists</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="two-columns">
+                <label>
+                  Price (€)
+                  <input type="number" name="price" step="0.01" placeholder="25.00" required>
+                </label>
+
+                <label>
+                  Stock
+                  <input type="number" name="stock" placeholder="10" required>
+                </label>
+              </div>
+
+              <div class="two-columns">
+                <label>
+                  Old Price (€)
+                  <input type="number" name="old_price" step="0.01" placeholder="32.00">
+                </label>
+
+                <label>
+                  Discount %
+                  <input type="number" name="discount_percent" step="1" placeholder="20">
+                </label>
+              </div>
+
+              <input type="file" name="image" accept="image/*">
+              <br><br>
+
+              <button type="submit" class="primary">Create product</button>
+            </form>
+          </div>
+
+          <div class="card list-card">
+            <h2>Product List</h2>
+
+            <div class="product-item">
+              <h3>Radiance Serum</h3>
+              <p>Vitamin C brightening serum</p>
+              <p>€25.00 | 10 in stock</p>
+              <a href="#">Edit</a>
+              <a href="#" class="danger">Delete</a>
+            </div>
+
+            <div class="product-item">
+              <h3>Nourishing Cream</h3>
+              <p>Deep hydration cream</p>
+              <p>€32.99 | 5 in stock</p>
+              <a href="#">Edit</a>
+              <a href="#" class="danger">Delete</a>
+            </div>
+
+          </div>
+
+        </section>
+
       </div>
+    </main>
 
-      <div class="card list-card">
-        <h2>Product List</h2>
-
-        <div class="product-item">
-          <h3>Radiance Serum</h3>
-          <p>Vitamin C brightening serum</p>
-          <p>€25.00 | 10 in stock</p>
-          <a href="#">Edit</a>
-          <a href="#" class="danger">Delete</a>
-        </div>
-
-        <div class="product-item">
-          <h3>Nourishing Cream</h3>
-          <p>Deep hydration cream</p>
-          <p>€32.99 | 5 in stock</p>
-          <a href="#">Edit</a>
-          <a href="#" class="danger">Delete</a>
-        </div>
-
-      </div>
-
-    </section>
   </div>
 </body>
 </html>
-
-

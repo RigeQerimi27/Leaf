@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Users</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin-crud.css">
+</head>
+
+<body>
+<div class="admin-layout">
+
+  <aside class="admin-sidebar">
+    <h2 class="admin-logo">Leaf</h2>
+    <ul class="admin-menu">
+      <li><a href="admin.html">Dashboard</a></li>
+      <li><a href="admin-homepage.html">Homepage</a></li>
+      <li><a href="admin-products.html">Products</a></li>
+      <li><a href="admin-about.html">About</a></li>
+      <li><a href="admin-contact.html">Contact</a></li>
+      <li><a href="admin-shipping.html">Shipping</a></li>
+      <li><a href="admin-skintype.html">Skin Type</a></li>
+      <li class="active"><a href="admin-users.html">Users</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main">
+    <div class="page">
+
+      <header class="hero">
+        <div>
+          <p class="eyebrow">ADMINISTRATOR PANEL</p>
+          <h1>USERS</h1>
+          <p class="subtitle">Create and view system users</p>
+        </div>
+      </header>
+
+      <section class="grid">
+
+        <!-- CREATE USER -->
+        <div class="card form-card">
+          <h2>Create User</h2>
+          <p class="muted">Add a new user or admin</p>
+
+          <form class="product-form">
+            <label>
+              Full Name
+              <input type="text" name="full_name" placeholder="John Doe" required>
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="user@leaf.com" required>
+            </label>
+
+            <label>
+              Password
+              <input type="password" name="password" placeholder="********" required>
+            </label>
+
+            <label>
+              Role
+              <select name="role" required>
+                <option value="">Select role</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </label>
+
+            <button type="submit" class="primary">Create user</button>
+          </form>
+        </div>
+
+        <!-- READ USERS -->
+        <div class="card list-card">
+          <h2>User List</h2>
+
+          <!-- Example item (placeholder for DB data) -->
+          <div class="product-item">
+            <h3>Admin User</h3>
+            <p>admin@leaf.com</p>
+            <p>Role: Admin</p>
+            <a href="#">Edit</a>
+            <a href="#" class="danger">Delete</a>
+          </div>
+
+          <div class="product-item">
+            <h3>Regular User</h3>
+            <p>user@leaf.com</p>
+            <p>Role: User</p>
+            <a href="#">Edit</a>
+            <a href="#" class="danger">Delete</a>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
