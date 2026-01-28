@@ -1,93 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaf Admin – CRUD</title>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="admin.css">
+  <meta charset="UTF-8">
+  <title>Leaf Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <div class="page">
+<div class="admin-layout">
 
-    <header class="hero">
-      <div>
-        <p class="eyebrow">ADMINISTRATOR PANEL</p>
-        <h1>ADMIN</h1>
-        <p class="subtitle">
-          Product management for Leaf Skincare
-        </p>
-      </div>
+  <aside class="admin-sidebar">
+    <h2 class="admin-logo">Leaf</h2>
+    <ul class="admin-menu">
+    <li class="active">Dashboard</li>
+     <li><a href="admin-homepage.html">Homepage</a></li>
+     <li><a href="admin-products.html">Products</a></li>
+     <li><a href="admin-shop.html">Shop</a></li>
+     <li><a href="admin-about.html">About</a></li>
+     <li><a href="admin-contact.html">Contact</a></li>
+     <li><a href="admin-shipping.html">Shipping</a></li>
+    </ul>
+  </aside>
 
-      <div class="card stats">
-        <div>
-          <span class="stat-label">Total</span>
-          <span class="stat-value">3</span>
-        </div>
-        <div>
-          <span class="stat-label">Database</span>
-          <span class="stat-value">leaf_db</span>
-        </div>
-      </div>
+  <main class="admin-main">
+
+    <header class="admin-header">
+      <h1>Admin Dashboard</h1>
+      <button class="btn-green">Log out</button>
     </header>
 
 
-    <section class="grid">
+    <section class="stats">
+      <div class="stat-card">
+        <h3>Products</h3>
+        <p>12</p>
+      </div>
+      <div class="stat-card">
+        <h3>Orders</h3>
+        <p>38</p>
+      </div>
+      <div class="stat-card">
+        <h3>Messages</h3>
+        <p>5</p>
+      </div>
+    </section>
 
-      <div class="card form-card">
-        <h2>Add a new product</h2>
-        <p class="muted">Fill in the product details</p>
+    <section class="management">
 
-        <form class="product-form">
-          <label>
-            Product name
-            <input type="text" placeholder="Product name" required>
-          </label>
-
-          <label>
-           Description
-            <textarea rows="4" placeholder="Description" required></textarea>
-          </label>
-
-          <div class="two-columns">
-            <label>
-              Price (€)
-              <input type="number" step="0.01" placeholder="€">
-            </label>
-
-            <label>
-              Stock
-              <input type="number" placeholder="10">
-            </label>
-          </div>
-
-          <button type="submit" class="primary">Create product</button>
-        </form>
+      <div class="manage-card">
+        <h3>Manage Homepage</h3>
+        <p>Edit hero text, images & top picks.</p>
+        <button class="btn-outline">Edit</button>
       </div>
 
-      <div class="card list-card">
-        <h2>Product List</h2>
+      <div class="manage-card">
+        <h3>Manage About</h3>
+        <p>Update story, values & images.</p>
+        <button class="btn-outline">Edit</button>
+      </div>
 
-        <div class="product-item">
-          <h3>Radiance Serum</h3>
-          <p>Vitamin C brightening serum</p>
-          <p>€25.00 | 10 in stock</p>
-          <a href="#">Edit</a>
-          <a href="#" class="danger">Delete</a>
-        </div>
+      <div class="manage-card">
+        <h3>Manage Shop</h3>
+        <p>Categories & collections.</p>
+        <button class="btn-outline">Edit</button>
+      </div>
 
-        <div class="product-item">
-          <h3>Nourishing Cream</h3>
-          <p>Deep hydration cream</p>
-          <p>€32.99 | 5 in stock</p>
-          <a href="#">Edito</a>
-          <a href="#" class="danger">Delete</a>
-        </div>
+      <div class="manage-card">
+        <h3>Products</h3>
+        <p>Add, edit or delete products.</p>
+        <button class="btn-green">Manage</button>
+      </div>
 
+      <div class="manage-card">
+        <h3>Shipping</h3>
+        <p>Shipping prices & zones.</p>
+        <button class="btn-outline">Edit</button>
       </div>
 
     </section>
-  </div>
+
+  </main>
+
+</div>
+
 </body>
 </html>
