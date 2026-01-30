@@ -26,21 +26,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (firstName.value.trim() === "") showError(firstName, "First name is required.");
     if (lastName.value.trim() === "") showError(lastName, "Last name is required.");
+
     if (phone.value.trim() === "") {
       showError(phone, "Phone number is required.");
     } else {
-      
-      const phonePattern = /^\+383\s\d{2}\s\d{3}\s\d{3,4}$/; 
+      const phonePattern = /^\+383\s?\d{2}\s?\d{3}\s?\d{3,4}$/;
       if (!phonePattern.test(phone.value.trim())) {
-        showError(phone, "Phone number format: +383 XXX XXX XXX");
+        showError(phone, "Phone number format: +383 44 123 456");
       }
     }
+
     if (street.value.trim() === "") showError(street, "Street name is required.");
     if (house.value.trim() === "") showError(house, "House number is required.");
-    if (zip.value.trim() === "") showError(zip, "ZIP code is required.");
+
+    if (zip.value.trim() === "") {
+      showError(zip, "ZIP code is required.");
+    } else {
+      const zipPattern = /^\d{4,6}$/;
+      if (!zipPattern.test(zip.value.trim())) {
+        showError(zip, "ZIP must be 4–6 digits.");
+      }
+    }
+
     if (city.value.trim() === "") showError(city, "City is required.");
 
     if (!valid) {
+      const msg = document.getElementById("msg");
+      if (msg) msg.innerText = "Please fix the errors above.";
       event.preventDefault();
     }
   });
