@@ -1,19 +1,17 @@
 <?php
-
 declare(strict_types=1);
 
 
 class ContactMessage
 {
-   
     private mysqli $connection;
 
-    
     public function __construct(mysqli $connection)
     {
         $this->connection = $connection;
     }
 
+  
     public function create(
         string $name,
         string $email,
@@ -21,84 +19,91 @@ class ContactMessage
         string $message,
         string $createdBy
     ): void {
-        
-
-        $statement = $this->connection->prepare(
+        $stmt = $this->connection->prepare(
             'INSERT INTO contact_messages (name, email, subject, message, created_by)
              VALUES (?, ?, ?, ?, ?)'
         );
 
-        
-        $statement->bind_param(
-            'sssss',
-            $name,
-            $email,
-            $subject,
-            $message,
-            $createdBy
-        );
-
-        
-        $statement->execute();
+       
+        if (!$stmt) {
+            throw new RuntimeException('Prepare failed: ' . $this->connection->error);
+        }
 
        
-        $statement->close();
+        $stmt->bind_param('sssss', $name, $email, $subject, $message, $createdBy);
+
+       
+        if (!$stmt->execute()) {
+            $stmt->close();
+            throw new RuntimeException('Execute failed: ' . $this->connection->error);
+        }
+
+        $stmt->close();
     }
 
-    
+   
     public function all(): array
     {
-       
         $result = $this->connection->query(
-            'SELECT * FROM contact_messages ORDER BY created_at DESC'
+            'SELECT id, name, email, subject, message, created_by, created_at
+             FROM contact_messages
+             ORDER BY created_at DESC'
         );
 
-        
         if (!$result) {
             return [];
         }
 
-       
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
    
     public function find(int $id): ?array
     {
-        
-        $statement = $this->connection->prepare(
-            'SELECT * FROM contact_messages WHERE id = ?'
+        $stmt = $this->connection->prepare(
+            'SELECT id, name, email, subject, message, created_by, created_at
+             FROM contact_messages
+             WHERE id = ?'
         );
 
-       
-        $statement->bind_param('i', $id);
+        if (!$stmt) {
+            throw new RuntimeException('Prepare failed: ' . $this->connection->error);
+        }
 
-        
-        $statement->execute();
+        $stmt->bind_param('i', $id);
 
-       
-        $result = $statement->get_result();
+        if (!$stmt->execute()) {
+            $stmt->close();
+            throw new RuntimeException('Execute failed: ' . $this->connection->error);
+        }
 
-       
-        $message = $result->fetch_assoc();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
 
-        
-        $statement->close();
+        $stmt->close();
 
-        
-        return $message ?: null;
+        return $row ?: null;
     }
 
     
     public function delete(int $id): void
     {
-        $statement = $this->connection->prepare(
+        $stmt = $this->connection->prepare(
             'DELETE FROM contact_messages WHERE id = ?'
         );
 
-        $statement->bind_param('i', $id);
+        if (!$stmt) {
+            throw new RuntimeException('Prepare failed: ' . $this->connection->error);
+        }
 
-        $statement->execute();
-        $statement->close();
+        $stmt->bind_param('i', $id);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            throw new RuntimeException('Execute failed: ' . $this->connection->error);
+        }
+
+        $stmt->close();
     }
 }
+

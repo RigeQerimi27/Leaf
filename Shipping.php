@@ -11,6 +11,7 @@ $error = null;
 
 $returnTo = $_GET['return_to'] ?? 'cart-page.php';
 
+
 if (isset($_POST['save'])) {
     $firstName = trim($_POST['first_name'] ?? '');
     $lastName  = trim($_POST['last_name'] ?? '');
@@ -37,32 +38,42 @@ if (isset($_POST['save'])) {
     } elseif (!preg_match($zipRegex, $zip)) {
         $error = "ZIP must be 4–6 digits!";
     } else {
-        $db = new Database();
-        $conn = $db->getConnection();
+        try {
+            $db = new Database();
+            $conn = $db->getConnection();
 
-        $shipping = new ShippingAddress($conn);
-        $createdBy = $_SESSION['user'] ?? 'guest';
+            $shipping = new ShippingAddress($conn);
 
-        $newId = $shipping->create(
-            $firstName,
-            $lastName,
-            $phone,
-            $street,
-            $houseNo,
-            $zip,
-            $state !== '' ? $state : null,
-            $city,
-            $note !== '' ? $note : null,
-            $createdBy
-        );
+           
+            $createdBy = $_SESSION['user'] ?? 'guest';
 
-        
-        $_SESSION['shipping_address_id'] = $newId;
+            $newId = $shipping->create(
+                $firstName,
+                $lastName,
+                $phone,
+                $street,
+                $houseNo,
+                $zip,
+                $state !== '' ? $state : null,
+                $city,
+                $note !== '' ? $note : null,
+                $createdBy
+            );
 
-       
-        header('Location: ' . $returnTo);
-        exit;
+            
+            $_SESSION['shipping_address_id'] = $newId;
+
+            header('Location: ' . $returnTo);
+            exit;
+        } catch (Throwable $e) {
+            $error = "Database error: " . $e->getMessage();
+        }
     }
+}
+
+
+function e(string $v): string {
+    return htmlspecialchars($v, ENT_QUOTES, 'UTF-8');
 }
 ?>
 <!doctype html>
@@ -101,51 +112,60 @@ if (isset($_POST['save'])) {
 
         <div>
           <label for="firstName">First Name</label>
-          <input id="firstName" name="first_name" type="text" required placeholder="Anna">
+          <input id="firstName" name="first_name" type="text" required placeholder="Anna"
+                 value="<?php echo e($firstName ?? ''); ?>">
         </div>
 
         <div>
           <label for="lastName">Last Name</label>
-          <input id="lastName" name="last_name" type="text" required placeholder="Smith">
+          <input id="lastName" name="last_name" type="text" required placeholder="Smith"
+                 value="<?php echo e($lastName ?? ''); ?>">
         </div>
 
         <div>
           <label for="phone">Phone Number</label>
-          <input id="phone" name="phone" type="tel" required placeholder="+383 44 123 456">
+          <input id="phone" name="phone" type="tel" required placeholder="+383 44 123 456"
+                 value="<?php echo e($phone ?? ''); ?>">
         </div>
 
         <div>
           <label for="street">Street Name</label>
-          <input id="street" name="street" type="text" required placeholder="Elm Street">
+          <input id="street" name="street" type="text" required placeholder="Elm Street"
+                 value="<?php echo e($street ?? ''); ?>">
         </div>
 
         <div>
           <label for="house">House No.</label>
-          <input id="house" name="house_no" type="text" required placeholder="12">
+          <input id="house" name="house_no" type="text" required placeholder="12"
+                 value="<?php echo e($houseNo ?? ''); ?>">
         </div>
 
         <div>
           <label for="zip">Post / ZIP Code</label>
-          <input id="zip" name="zip" type="text" required placeholder="10000">
+          <input id="zip" name="zip" type="text" required placeholder="10000"
+                 value="<?php echo e($zip ?? ''); ?>">
         </div>
 
         <div>
           <label for="state">State</label>
-          <input id="state" name="state" type="text" placeholder="Region / State">
+          <input id="state" name="state" type="text" placeholder="Region / State"
+                 value="<?php echo e($state ?? ''); ?>">
         </div>
 
         <div>
           <label for="city">City</label>
-          <input id="city" name="city" type="text" required placeholder="Pristina">
+          <input id="city" name="city" type="text" required placeholder="Pristina"
+                 value="<?php echo e($city ?? ''); ?>">
         </div>
 
         <div class="full">
           <label for="note">Delivery Note (optional)</label>
-          <input id="note" name="note" type="text" placeholder="Doorbell code, leave at reception, etc.">
+          <input id="note" name="note" type="text" placeholder="Doorbell code, leave at reception, etc."
+                 value="<?php echo e($note ?? ''); ?>">
         </div>
 
         <p class="full" style="margin:10px 0;">
-          <?php if ($error) echo "<span style='color:red;'>$error</span>"; ?>
+          <?php if ($error) echo "<span style='color:red;'>" . e($error) . "</span>"; ?>
         </p>
 
         <div class="full save-row">
@@ -158,6 +178,7 @@ if (isset($_POST['save'])) {
 
 </body>
 </html>
+
 
 
 

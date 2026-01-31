@@ -48,8 +48,8 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
     <nav>
       <ul class="nav-links">
         <li><a href="homepage.php">Home</a></li>
-        <li><a href="shop-bestsellers.html">Shop</a></li>
-        <li><a href="AboutUs.html">About</a></li>
+        <li><a href="shop-bestsellers.php">Shop</a></li>
+        <li><a href="AboutUs.php">About</a></li>
         <li><a href="Contact.php">Contact</a></li>
       </ul>
     </nav>
