@@ -1,47 +1,38 @@
 <?php
 declare(strict_types=1);
 
-
 session_start();
 
-
 require_once __DIR__ . '/database.php';
-
-
 require_once __DIR__ . '/AboutContent.php';
 
 
 $db = new Database();
-
-
 $conn = $db->getConnection();
 
 
 $about = new AboutContent($conn);
-
-
-$data = $about->latest();
-
+$data  = $about->latest();
 
 
 $aboutSubtitle = $data['about_subtitle'] ?? 'Our story of natural beauty and sustainable skincare';
-
-$missionText = $data['mission_text'] ?? "At Leaf, we believe that true beauty comes from nature.\n\nEvery product is crafted with care, tested rigorously, and designed to bring out your natural radiance. We’re committed to sustainability, ethical sourcing, and creating products that are as kind to the planet as they are to your skin.";
-
-$whySubtitle = $data['why_subtitle'] ?? 'Our commitment to clean, effective beauty shines through in every product';
+$missionText   = $data['mission_text'] ?? "At Leaf, we believe that true beauty comes from nature...\n\n...";
+$whySubtitle   = $data['why_subtitle'] ?? 'Our commitment to clean, effective beauty shines through in every product';
 
 $feature1Title = $data['feature1_title'] ?? 'Natural Ingredients';
-$feature1Text  = $data['feature1_text']  ?? 'Only the finest botanicals and organic compounds, sustainably sourced from around the world.';
+$feature1Text  = $data['feature1_text']  ?? 'Only the finest botanicals...';
 
 $feature2Title = $data['feature2_title'] ?? 'Visible Results';
-$feature2Text  = $data['feature2_text']  ?? 'Clinically proven formulas that deliver noticeable improvements in skin texture and radiance.';
+$feature2Text  = $data['feature2_text']  ?? 'Clinically proven formulas...';
 
 $feature3Title = $data['feature3_title'] ?? 'Cruelty Free';
-$feature3Text  = $data['feature3_text']  ?? 'Never tested on animals. We believe in beauty that’s kind to all living beings.';
+$feature3Text  = $data['feature3_text']  ?? 'Never tested on animals...';
 
 $feature4Title = $data['feature4_title'] ?? 'Dermatologist Tested';
-$feature4Text  = $data['feature4_text']  ?? 'Gentle yet effective formulations suitable for even the most sensitive skin types.';
+$feature4Text  = $data['feature4_text']  ?? 'Gentle yet effective...';
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
