@@ -354,3 +354,105 @@ body {
 .product-item .danger {
   color: #c0392b;
 }
+
+.order-card {
+  margin-bottom: 30px;
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-top h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.order-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.order-status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.order-status.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.order-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.order-actions a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+
+@media (max-width: 992px) {
+  .order-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .order-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .order-top h3 {
+    font-size: 20px;
+  }
+
+  .order-status {
+    font-size: 12px;
+    padding: 5px 14px;
+  }
+
+  .order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .order-actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .admin-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .order-card {
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  .order-info p {
+    font-size: 13px;
+  }
+
+  .order-top h3 {
+    font-size: 18px;
+  }
+}
