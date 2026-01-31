@@ -7,7 +7,9 @@ require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/ShippingAddress.php';
 
 $error = null;
-$success = null;
+
+
+$returnTo = $_GET['return_to'] ?? 'cart-page.php';
 
 if (isset($_POST['save'])) {
     $firstName = trim($_POST['first_name'] ?? '');
@@ -20,9 +22,8 @@ if (isset($_POST['save'])) {
     $city      = trim($_POST['city'] ?? '');
     $note      = trim($_POST['note'] ?? '');
 
-  
     $nameRegex  = "/^[A-Za-z\s]{2,}$/";
-    $phoneRegex = "/^\+383\s?\d{2}\s?\d{3}\s?\d{3,4}$/"; // +383 44 123 456
+    $phoneRegex = "/^\+383\s?\d{2}\s?\d{3}\s?\d{3,4}$/";
     $zipRegex   = "/^\d{4,6}$/";
 
     if (!preg_match($nameRegex, $firstName)) {
@@ -42,7 +43,7 @@ if (isset($_POST['save'])) {
         $shipping = new ShippingAddress($conn);
         $createdBy = $_SESSION['user'] ?? 'guest';
 
-        $shipping->create(
+        $newId = $shipping->create(
             $firstName,
             $lastName,
             $phone,
@@ -55,7 +56,12 @@ if (isset($_POST['save'])) {
             $createdBy
         );
 
-        $success = "Address saved successfully!";
+        
+        $_SESSION['shipping_address_id'] = $newId;
+
+       
+        header('Location: ' . $returnTo);
+        exit;
     }
 }
 ?>
@@ -71,7 +77,6 @@ if (isset($_POST['save'])) {
 <body>
 <header class="navbar">
   <div class="logo">Leaf</div>
-
   <nav>
     <ul class="nav-links">
       <li><a href="homepage.php">Home</a></li>
@@ -80,31 +85,17 @@ if (isset($_POST['save'])) {
       <li><a href="contact.php">Contact</a></li>
     </ul>
   </nav>
-
-  <div class="search-bar">
-    <input type="text" placeholder="Search products...." class="search-input">
-  </div>
-
-  <div class="icons">
-    <a href="#"><img src="icons/shopping cart.jpg"></a>
-    <a href="#"><img src="icons/user.jpg"></a>
-  </div>
 </header>
 
 <section class="shipping-section">
   <div class="wrap">
-
-  
-
     <h2 class="shipping-title" style="margin-top:40px;">Shipping Address</h2>
     <p class="shipping-subtitle">Fill in the address where you'd like to receive your order.</p>
 
     <div class="address-card">
-
-      <form id="shippingForm"
-            class="address-form"
+      <form class="address-form"
             method="post"
-            action="shipping.php"
+            action="shipping.php?return_to=<?php echo urlencode($returnTo); ?>"
             autocomplete="on"
             novalidate>
 
@@ -153,73 +144,22 @@ if (isset($_POST['save'])) {
           <input id="note" name="note" type="text" placeholder="Doorbell code, leave at reception, etc.">
         </div>
 
-        <p class="full" id="msg" style="margin:10px 0;">
-          <?php
-            if ($error) echo "<span style='color:red;'>$error</span>";
-            if ($success) echo "<span style='color:green;'>$success</span>";
-          ?>
+        <p class="full" style="margin:10px 0;">
+          <?php if ($error) echo "<span style='color:red;'>$error</span>"; ?>
         </p>
 
         <div class="full save-row">
-          <button type="submit" name="save" id="saveBtn" class="btn-save">Save Address</button>
+          <button type="submit" name="save" class="btn-save">Save Address</button>
         </div>
-
       </form>
-
-      <div class="helper saved-info">
-        Saved addresses are stored locally in your browser (only visible on this device).
-      </div>
-
     </div>
-
   </div>
 </section>
 
- <footer class="footer">
-    <div class="footer-left">
-      <div class="footer-logo">Leaf</div>
-      <p class="footer-text">Natural beauty essentials for radiant, healthy skin.</p>
-    </div>
-
-    <div class="footer-links">
-      <div>
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="shop-bestsellers.html">All Products</a></li>
-          <li><a href="shop-bestsellers.html">Bestsellers</a></li>
-          <li><a href="#">New arrivals</a></li>
-          <li><a href="#">Gift sets</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Support</h4>
-        <ul>
-          <li><a href="Contact.php">Contact us</a></li>
-          <li><a href="AboutUs.html">About us</a></li>
-          <li><a href="Shipping.html">Shipping info</a></li>
-          <li><a href="#">Returns</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-social">
-      <h4>Follow us</h4>
-      <div class="social-icons">
-        <a href="#"><img src="icons/instagram.jpg" alt="Instagram"></a>
-        <a href="#"><img src="icons/facebook.jpg" alt="Facebook"></a>
-        <a href="#"><img src="icons/tiktok.jpg" alt="TikTok"></a>
-      </div>
-    </div>
-  </footer>
-
-  <p class="copyright">
-    © 2025 Leaf Skincare. All rights reserved.
-  </p>
-
-<script src="shipping.js"></script>
 </body>
 </html>
+
+
 
 
 

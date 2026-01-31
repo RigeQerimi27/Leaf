@@ -21,14 +21,14 @@ class ShippingAddress
         string $city,
         ?string $note,
         string $createdBy
-    ): void {
-        $statement = $this->connection->prepare(
+    ): int {
+        $stmt = $this->connection->prepare(
             'INSERT INTO shipping_addresses
             (first_name, last_name, phone, street, house_no, zip, state, city, note, created_by)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         );
 
-        $statement->bind_param(
+        $stmt->bind_param(
             'ssssssssss',
             $firstName,
             $lastName,
@@ -42,7 +42,10 @@ class ShippingAddress
             $createdBy
         );
 
-        $statement->execute();
-        $statement->close();
+        $stmt->execute();
+        $newId = (int)$this->connection->insert_id;
+        $stmt->close();
+
+        return $newId;
     }
 }

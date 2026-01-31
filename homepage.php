@@ -1,21 +1,18 @@
 <?php
 declare(strict_types=1);
 
-session_start(); 
+session_start();
 
-require_once __DIR__ . '/database.php'; 
-
-
-$db = new Database();
+require_once __DIR__ . '/database.php';
+require_once __DIR__ . '/HomepageContent.php'; 
 
 
+$db   = new Database();
 $conn = $db->getConnection();
 
 
-$result = $conn->query("SELECT * FROM homepage_content ORDER BY id DESC LIMIT 1");
-
-
-$data = $result ? $result->fetch_assoc() : null;
+$homepage = new HomepageContent($conn);
+$data     = $homepage->latest(); 
 
 
 $heroTitle = $data['hero_title'] ?? "Natural Beauty,<br><span class='highlight'>Pure Radiance</span>";
@@ -50,7 +47,6 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
 
     <nav>
       <ul class="nav-links">
-       
         <li><a href="homepage.php">Home</a></li>
         <li><a href="shop-bestsellers.html">Shop</a></li>
         <li><a href="AboutUs.html">About</a></li>
@@ -63,23 +59,21 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
     </div>
 
     <div class="icons">
-      <a href="#"><img src="icons/shopping cart.jpg"></a>
-      <a href="#"><img src="icons/user.jpg"></a>
+      <a href="#"><img src="icons/shopping cart.jpg" alt="Cart"></a>
+      <a href="#"><img src="icons/user.jpg" alt="User"></a>
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-text">
 
-    
       <h1 class="hero-title">
         <?php
-         
+          
           echo $heroTitle;
         ?>
       </h1>
 
-      
       <p class="hero-sub"><?php echo htmlspecialchars($heroSub); ?></p>
 
       <div class="hero-buttons">
@@ -106,18 +100,15 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
     <div class="skin-type-container">
       <div class="skin-type-section">
 
-        
         <h3><?php echo htmlspecialchars($skinTitle); ?></h3>
         <p><?php echo htmlspecialchars($skinText); ?></p>
 
-        
         <a href="<?php echo htmlspecialchars($skinBtnLink); ?>" class="skin-type-btn">
           <?php echo htmlspecialchars($skinBtnText); ?>
         </a>
       </div>
 
       <div class="skin-type-info">
-       
         <h4><?php echo htmlspecialchars($skinInfoTitle); ?></h4>
         <p><?php echo htmlspecialchars($skinInfoText); ?></p>
       </div>
@@ -125,13 +116,12 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
   </section>
 
   <section class="top-picks">
-   
     <h2><?php echo htmlspecialchars($topPicksTitle); ?></h2>
     <p class="section-text"><?php echo htmlspecialchars($topPicksSub); ?></p>
 
-    
     <div class="product-list">
 
+     
       <div class="product">
         <img src="images/radiance serum.jpg" alt="Radiance Serum" class="product-image">
         <h3 class="product-name">Radiance Serum</h3>
@@ -160,8 +150,8 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
   </section>
 
   <section class="info-cards">
-    
 
+    
     <div class="info-card">
       <h3 class="card-title">Shop now</h3>
       <p class="card-text">Discover our full collection of luxury skincare.</p>
@@ -226,3 +216,4 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
   <script src="main.js"></script>
 </body>
 </html>
+
