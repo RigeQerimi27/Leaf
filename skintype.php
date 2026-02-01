@@ -46,9 +46,7 @@ if (!$data) {
     </ul>
   </nav>
 
-  <div class="search-bar">
-    <input type="text" placeholder="Search products...." class="search-input" />
-  </div>
+  
 
   <div class="icons">
     <a href="#"><img src="icons/shopping cart.jpg" alt="Cart" /></a>

@@ -1,29 +1,24 @@
 <?php
 declare(strict_types=1);
 
-
 class Product
 {
-    private mysqli $connection; 
+    private mysqli $connection;
 
     public function __construct(mysqli $connection)
     {
         $this->connection = $connection;
     }
 
-    
     public function allByPage(string $shopPage): array
     {
-       
         $stmt = $this->connection->prepare(
             'SELECT * FROM products WHERE shop_page = ? ORDER BY created_at DESC'
         );
 
-       
         $stmt->bind_param('s', $shopPage);
         $stmt->execute();
 
-        
         $res = $stmt->get_result();
         $rows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
 
@@ -31,14 +26,12 @@ class Product
         return $rows;
     }
 
-   
     public function allByPageAndSection(string $shopPage, string $shopSection): array
     {
         $stmt = $this->connection->prepare(
             'SELECT * FROM products WHERE shop_page = ? AND shop_section = ? ORDER BY created_at DESC'
         );
 
-       
         $stmt->bind_param('ss', $shopPage, $shopSection);
         $stmt->execute();
 
@@ -49,7 +42,37 @@ class Product
         return $rows;
     }
 
-   
+    
+    public function searchByPageAndSection(string $shopPage, string $shopSection, string $query): array
+    {
+       
+        $q = '%' . $query . '%';
+
+        $stmt = $this->connection->prepare(
+            "SELECT *
+             FROM products
+             WHERE shop_page = ?
+               AND shop_section = ?
+               AND (
+                    name LIKE ?
+                    OR benefit LIKE ?
+                    OR size LIKE ?
+                    OR description LIKE ?
+               )
+             ORDER BY created_at DESC"
+        );
+
+        
+        $stmt->bind_param('ssssss', $shopPage, $shopSection, $q, $q, $q, $q);
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+        $rows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
+
+        $stmt->close();
+        return $rows;
+    }
+
     public function all(): array
     {
         $res = $this->connection->query('SELECT * FROM products ORDER BY created_at DESC');
@@ -57,11 +80,10 @@ class Product
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
-   
     public function findById(int $id): ?array
     {
         $stmt = $this->connection->prepare('SELECT * FROM products WHERE id = ? LIMIT 1');
-        $stmt->bind_param('i', $id); 
+        $stmt->bind_param('i', $id);
         $stmt->execute();
 
         $res = $stmt->get_result();
@@ -71,7 +93,6 @@ class Product
         return $row ?: null;
     }
 
-   
     public function create(
         string $name,
         string $description,
@@ -91,7 +112,6 @@ class Product
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         );
 
-       
         $stmt->bind_param(
             'ssssssdidis',
             $name,
@@ -109,14 +129,12 @@ class Product
 
         $stmt->execute();
 
-       
         $newId = (int)$this->connection->insert_id;
 
         $stmt->close();
         return $newId;
     }
 
- 
     public function update(
         int $id,
         string $name,
@@ -138,7 +156,6 @@ class Product
              WHERE id=?'
         );
 
-      
         $stmt->bind_param(
             'ssssssdidisi',
             $name,
@@ -159,7 +176,6 @@ class Product
         $stmt->close();
     }
 
-   
     public function delete(int $id): void
     {
         $stmt = $this->connection->prepare('DELETE FROM products WHERE id=?');
@@ -168,7 +184,6 @@ class Product
         $stmt->close();
     }
 
-    
     public function countAll(): int
     {
         $res = $this->connection->query('SELECT COUNT(*) AS c FROM products');
@@ -177,4 +192,5 @@ class Product
         return (int)($row['c'] ?? 0);
     }
 }
+
 

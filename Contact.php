@@ -75,15 +75,22 @@ if (isset($_POST['send'])) {
       </ul>
     </nav>
 
-    <div class="search-bar">
-      <input type="text" placeholder="Search products...." class="search-input">
-    </div>
+    
 
-    <div class="icons">
-      <a href="#"><img src="icons/shopping cart.jpg"></a>
-      <a href="#"><img src="icons/user.jpg"></a>
+   <div class="icons">
+  <a href="cart-page.php"><img src="icons/shopping cart.jpg" alt="Cart"></a>
+
+  <div class="user-menu">
+    <img src="icons/user.jpg" alt="User" class="user-icon">
+
+    <div class="logout-dropdown">
+      <a href="logout.php">Logout</a>
     </div>
+  </div>
+</div>
+
 </header>
+
 
 <section class="contact-hero">
   <h1>Get in Touch</h1>

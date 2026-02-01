@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/Product.php';
 
@@ -13,6 +12,9 @@ $db = new Database();
 $conn = $db->getConnection();
 
 $productModel = new Product($conn);
+
+
+$q = trim($_GET['q'] ?? '');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,12 +40,22 @@ $productModel = new Product($conn);
     </ul>
   </nav>
 
+  
   <div class="search-bar">
-    <input type="text" placeholder="Search products...." class="search-input">
+    <form method="get" action="" style="margin:0;">
+      <input
+        type="text"
+        name="q"
+        placeholder="Search products...."
+        class="search-input"
+        value="<?php echo htmlspecialchars($q); ?>"
+      >
+      
+      <button type="submit" style="display:none;">Search</button>
+    </form>
   </div>
 
   <div class="icons">
- 
     <a href="cart-page.php"><img src="icons/shopping cart.jpg" alt="Cart"></a>
     <a href="#"><img src="icons/user.jpg" alt="User"></a>
   </div>
@@ -58,8 +70,10 @@ $productModel = new Product($conn);
 
 <?php foreach ($sections as $sectionKey => $sectionTitle): ?>
   <?php
-    
-    $products = $productModel->allByPageAndSection($page, $sectionKey);
+   
+    $products = ($q !== '')
+      ? $productModel->searchByPageAndSection($page, $sectionKey, $q)
+      : $productModel->allByPageAndSection($page, $sectionKey);
   ?>
 
   <section class="shop-section">
@@ -68,7 +82,6 @@ $productModel = new Product($conn);
     <div class="product-grid">
       <?php foreach ($products as $p): ?>
         <?php
-         
           $isSale = !empty($p['discount_percent']) && !empty($p['old_price']);
         ?>
 
@@ -86,7 +99,6 @@ $productModel = new Product($conn);
 
           <p class="product-meta">
             <?php
-             
               $metaParts = [];
               if (!empty($p['size'])) { $metaParts[] = $p['size']; }
               if (!empty($p['benefit'])) { $metaParts[] = $p['benefit']; }
@@ -95,14 +107,12 @@ $productModel = new Product($conn);
           </p>
 
           <?php if ($isSale): ?>
-           
             <p class="price">
               <span class="new-price">€<?php echo number_format((float)$p['price'], 2); ?></span>
               <span class="old-price">€<?php echo number_format((float)$p['old_price'], 2); ?></span>
               <span class="save">Save <?php echo (int)$p['discount_percent']; ?>%</span>
             </p>
 
-           
             <form method="post" action="cart-handler.php" style="margin-top:10px;">
               <input type="hidden" name="action" value="add">
               <input type="hidden" name="product_id" value="<?php echo (int)$p['id']; ?>">
@@ -110,11 +120,9 @@ $productModel = new Product($conn);
             </form>
 
           <?php else: ?>
-            
             <div class="price-row">
               <p class="new-price">€<?php echo number_format((float)$p['price'], 2); ?></p>
 
-             
               <form method="post" action="cart-handler.php" style="margin:0;">
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="product_id" value="<?php echo (int)$p['id']; ?>">
@@ -150,7 +158,6 @@ $productModel = new Product($conn);
       <ul>
         <li><a href="Contact.php">Contact us</a></li>
         <li><a href="AboutUs.php">About us</a></li>
-       
         <li><a href="shipping.php">Shipping info</a></li>
         <li><a href="#">Returns</a></li>
       </ul>

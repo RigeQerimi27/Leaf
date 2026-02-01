@@ -21,6 +21,8 @@ body {
 
 }
 
+
+
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 30px;
@@ -358,7 +360,9 @@ body {
   color: rgb(60, 58, 58);
   font-size: 14px;
   background-color: #DDEBD8;;
+
 }
+
 
 
 
@@ -617,5 +621,7 @@ body {
   }
 }
 }
+
+
 
 
