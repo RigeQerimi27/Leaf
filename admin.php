@@ -1,3 +1,19 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/Database.php';
+require_once __DIR__ . '/UserRepository.php';
+require_once __DIR__ . '/AuthService.php';
+
+$db = new Database();
+$userRepo = new UserRepository($db);
+$auth = new AuthService($userRepo);
+
+
+$auth->requireAdmin();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,16 +39,15 @@
       <li><a href="admin-shipping.html">Shipping</a></li>
       <li><a href="admin-skintype.html">Skin Type</a></li>
       <li><a href="admin-users.html">Users</a></li>
+       <li><a href="admin-orders.html">Orders</a></li>
+       <li><a href="logout.php">Logout</a></li>
 
     </ul>
   </aside>
 
   <main class="admin-main">
 
-    <header class="admin-header">
-      <h1>Admin Dashboard</h1>
-      <button class="btn-green">Log out</button>
-    </header>
+    
 
     <section class="stats">
       <div class="stat-card">
@@ -83,15 +98,21 @@
 
       <div class="manage-card">
         <h3>Contact</h3>
-        <p>Update contact info & view messages.</p>
+        <p>Create contact info & view messages.</p>
         <a class="btn-outline" href="admin-contact.html">Edit</a>
       </div>
 
       <div class="manage-card">
   <h3>Users</h3>
-  <p>Create users & manage roles.</p>
+  <p>Create , edit users & manage roles.</p>
   <a class="btn-outline" href="admin-users.html">Edit</a>
 </div>
+
+<div class="manage-card">
+        <h3>Orders</h3>
+        <p>Read & delete orders</p>
+        <a class="btn-outline" href="admin-orders.php">Edit</a>
+      </div>
 
 
     </section>

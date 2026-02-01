@@ -58,10 +58,19 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
       <input type="text" placeholder="Search products...." class="search-input">
     </div>
 
-    <div class="icons">
-      <a href="#"><img src="icons/shopping cart.jpg" alt="Cart"></a>
-      <a href="#"><img src="icons/user.jpg" alt="User"></a>
+   <div class="icons">
+  <a href="#"><img src="icons/shopping cart.jpg" alt="Cart"></a>
+
+  <div class="user-menu">
+    <img src="icons/user.jpg" alt="User" class="user-icon">
+
+    <div class="logout-dropdown">
+      <a href="logout.php">Logout</a>
     </div>
+  </div>
+</div>
+
+
   </header>
 
   <section class="hero">

@@ -15,6 +15,8 @@ $conn = $db->getConnection();
 $shippingModel = new ShippingAddress($conn);
 
 
+
+
 if (isset($_POST['create_shipping'])) {
     $firstName = trim($_POST['first_name'] ?? '');
     $lastName  = trim($_POST['last_name'] ?? '');
@@ -116,6 +118,8 @@ function e(string $v): string {
             <li class="active"><a href="admin-shipping.php">Shipping</a></li>
             <li><a href="admin-skintype.php">Skin Type</a></li>
             <li><a href="admin-users.html">Users</a></li>
+             <li><a href="admin-orders.html">Orders</a></li>
+             <li><a href="logout.php">Logout</a></li>
         </ul>
     </aside>
 

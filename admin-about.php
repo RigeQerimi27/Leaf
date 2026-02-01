@@ -15,6 +15,8 @@ $about = new AboutContent($conn);
 $message = null;
 
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $section = (string)($_POST['section'] ?? '');
 
@@ -88,6 +90,8 @@ $current = $about->latest() ?? [];
         <li><a href="admin-shipping.html">Shipping</a></li>
         <li><a href="admin-skintype.html">Skin Type</a></li>
         <li><a href="admin-users.html">Users</a></li>
+         <li><a href="admin-orders.html">Orders</a></li>
+         <li><a href="logout.php">Logout</a></li>
       </ul>
     </aside>
 

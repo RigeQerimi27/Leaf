@@ -10,6 +10,8 @@ $db = new Database();
 $conn = $db->getConnection();
 $productModel = new Product($conn);
 
+
+
 $editId = isset($_GET['edit']) ? (int)$_GET['edit'] : 0;
 $editProduct = $editId > 0 ? $productModel->findById($editId) : null;
 
@@ -46,6 +48,8 @@ $dbName = getenv('DB_NAME') ?: 'projekti_web';
         <li><a href="admin-shipping.html">Shipping</a></li>
         <li><a href="admin-skintype.html">Skin Type</a></li>
         <li><a href="admin-users.html">Users</a></li>
+        <li><a href="admin-orders.html">Orders</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </aside>
 

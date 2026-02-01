@@ -17,6 +17,8 @@ $conn = $db->getConnection();
 $contactModel = new ContactMessage($conn);
 
 
+
+
 if (isset($_POST['create_message'])) {
     $name = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
@@ -100,6 +102,7 @@ $messages = $contactModel->all();
       <li><a href="admin-shipping.html">Shipping</a></li>
       <li><a href="admin-skintype.html">Skin Type</a></li>
       <li><a href="admin-users.html">Users</a></li>
+       <li><a href="admin-orders.html">Orders</a></li>
     </ul>
   </aside>
 

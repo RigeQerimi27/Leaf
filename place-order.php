@@ -18,7 +18,10 @@ if ($shippingId <= 0) { header('Location: shipping.php?return_to=cart-page.php')
 $db = new Database();
 $conn = $db->getConnection();
 
-$createdBy = $_SESSION['user'] ?? 'guest';
+$createdBy = $_SESSION['user_email']
+    ?? $_SESSION['user']
+    ?? (string)($_SESSION['user_id'] ?? '')
+    ?: 'guest';
 
 
 $ids = array_keys($cart);

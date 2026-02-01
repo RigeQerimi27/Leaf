@@ -45,7 +45,11 @@ if (isset($_POST['save'])) {
             $shipping = new ShippingAddress($conn);
 
            
-            $createdBy = $_SESSION['user'] ?? 'guest';
+            $createdBy = $_SESSION['user_email']
+    ?? $_SESSION['user']
+    ?? (string)($_SESSION['user_id'] ?? '')
+    ?: 'guest';
+
 
             $newId = $shipping->create(
                 $firstName,

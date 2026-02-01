@@ -6,7 +6,7 @@ class AboutContent
 {
     private mysqli $connection;
 
-    public function __construct(mysqli $connection)
+    public function __construct(mysqli $connection) 
     {
         $this->connection = $connection;
     }

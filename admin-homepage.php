@@ -17,6 +17,8 @@ $homepage = new HomepageContent($conn);
 
 $message = null;
 
+$auth->requireAdmin();
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $section = (string)($_POST['section'] ?? '');
@@ -103,6 +105,8 @@ $current = $homepage->latest() ?? [];
       <li><a href="admin-shipping.html">Shipping</a></li>
       <li><a href="admin-skintype.html">Skin Type</a></li>
       <li><a href="admin-users.html">Users</a></li>
+       <li><a href="admin-orders.html">Orders</a></li>
+       <li><a href="logout.php">Logout</a></li>
     </ul>
   </aside>
 

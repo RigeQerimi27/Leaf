@@ -17,6 +17,8 @@ $conn = $db->getConnection();
 $page = new SkintypePage($conn);
 
 
+
+
 $current = $page->latest();
 if (!$current) {
     die('No data found in skintype_page table. Insert one row in phpMyAdmin.');
@@ -123,6 +125,8 @@ function e(string $value): string {
       <li><a href="admin-shipping.html">Shipping</a></li>
       <li class="active"><a href="admin-skintype.php">Skin Type</a></li>
       <li><a href="admin-users.html">Users</a></li>
+       <li><a href="admin-orders.html">Orders</a></li>
+       <li><a href="logout.php">Logout</a></li>
     </ul>
   </aside>
 
