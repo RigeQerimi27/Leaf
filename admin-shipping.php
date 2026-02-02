@@ -110,15 +110,15 @@ function e(string $v): string {
     <aside class="admin-sidebar">
         <h2 class="admin-logo">Leaf</h2>
         <ul class="admin-menu">
-            <li><a href="admin.html">Dashboard</a></li>
-            <li><a href="admin-homepage.html">Homepage</a></li>
-            <li><a href="admin-products.html">Products</a></li>
-            <li><a href="admin-about.html">About</a></li>
+            <li><a href="admin.php">Dashboard</a></li>
+            <li><a href="admin-homepage.php">Homepage</a></li>
+            <li><a href="admin-products.php">Products</a></li>
+            <li><a href="admin-about.php">About</a></li>
             <li><a href="admin-contact.php">Contact</a></li>
             <li class="active"><a href="admin-shipping.php">Shipping</a></li>
             <li><a href="admin-skintype.php">Skin Type</a></li>
-            <li><a href="admin-users.html">Users</a></li>
-             <li><a href="admin-orders.html">Orders</a></li>
+            <li><a href="admin-users.php">Users</a></li>
+             <li><a href="admin-orders.php">Orders</a></li>
              <li><a href="logout.php">Logout</a></li>
         </ul>
     </aside>
