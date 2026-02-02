@@ -153,7 +153,7 @@ if ($action === 'delete' && $id) {
       <li class="active"><a href="admin-users.php">Users</a></li>
       <li><a href="admin-orders.php">Orders</a></li>
 
-      <!-- Logout link -->
+     
       <li><a href="logout.php">Logout</a></li>
     </ul>
   </aside>

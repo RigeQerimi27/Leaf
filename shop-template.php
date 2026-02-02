@@ -137,42 +137,42 @@ $q = trim($_GET['q'] ?? '');
 <?php endforeach; ?>
 
 <footer class="footer">
-  <div class="footer-left">
-    <div class="footer-logo">Leaf</div>
-    <p class="footer-text">Natural beauty essentials for radiant, healthy skin.</p>
-  </div>
-
-  <div class="footer-links">
-    <div>
-      <h4>Shop</h4>
-      <ul>
-        <li><a href="shop-bestsellers.php">All Products</a></li>
-        <li><a href="shop-bestsellers.php">Bestsellers</a></li>
-        <li><a href="#">New arrivals</a></li>
-        <li><a href="#">Gift sets</a></li>
-      </ul>
+    <div class="footer-left">
+      <div class="footer-logo">Leaf</div>
+      <p class="footer-text">Natural beauty essentials for radiant, healthy skin.</p>
     </div>
 
-    <div>
-      <h4>Support</h4>
-      <ul>
-        <li><a href="Contact.php">Contact us</a></li>
-        <li><a href="AboutUs.php">About us</a></li>
-        <li><a href="shipping.php">Shipping info</a></li>
-        <li><a href="#">Returns</a></li>
-      </ul>
-    </div>
-  </div>
+    <div class="footer-links">
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop-bestsellers.php">All Products</a></li>
+          <li><a href="shop-bestsellers.php">Bestsellers</a></li>
+          <li><a href="skintype.php">Skintype</a></li>
+          <li><a href="shop-skincare.php">Skincare</a></li>
+        </ul>
+      </div>
 
-  <div class="footer-social">
-    <h4>Follow us</h4>
-    <div class="social-icons">
-      <a href="#"><img src="icons/instagram.jpg" alt="Instagram"></a>
-      <a href="#"><img src="icons/facebook.jpg" alt="Facebook"></a>
-      <a href="#"><img src="icons/tiktok.jpg" alt="TikTok"></a>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="Contact.php">Contact us</a></li>
+          <li><a href="AboutUs.php">About us</a></li>
+          <li><a href="Shipping.php">Shipping info</a></li>
+          <li><a href="shop-bodycare.php">Bodycare</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</footer>
+
+    <div class="footer-social">
+      <h4>Follow us</h4>
+      <div class="social-icons">
+        <a href="#"><img src="icons/instagram.jpg" alt="Instagram"></a>
+        <a href="#"><img src="icons/facebook.jpg" alt="Facebook"></a>
+        <a href="#"><img src="icons/tiktok.jpg" alt="TikTok"></a>
+      </div>
+    </div>
+  </footer>
 
 <p class="copyright">
   © 2025 Leaf Skincare. All rights reserved.

@@ -21,7 +21,7 @@ $heroSub   = $data['hero_sub'] ?? "Explore our fresh, organic skincare collectio
 $skinTitle   = $data['skin_title'] ?? "Not sure about your skin type?";
 $skinText    = $data['skin_text'] ?? "Understanding your skin type helps you choose the right products for a healthy, glowing complexion.";
 $skinBtnText = $data['skin_btn_text'] ?? "Find your skin type";
-$skinBtnLink = $data['skin_btn_link'] ?? "skintype.html";
+$skinBtnLink = $data['skin_btn_link'] ?? "skintype.php";
 
 $skinInfoTitle = $data['skin_info_title'] ?? "Why understanding your skin type matters";
 $skinInfoText  = $data['skin_info_text'] ?? "Choosing the right skincare routine starts with knowing your skin.";
@@ -84,8 +84,8 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
       <p class="hero-sub"><?php echo htmlspecialchars($heroSub); ?></p>
 
       <div class="hero-buttons">
-        <a href="shop-bestsellers.html" class="btn-green">Shop collection</a>
-        <a href="AboutUs.html" class="btn-outline">Learn more</a>
+        <a href="shop-bestsellers.php" class="btn-green">Shop collection</a>
+        <a href="AboutUs.php" class="btn-outline">Learn more</a>
       </div>
     </div>
 
@@ -188,10 +188,10 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
       <div>
         <h4>Shop</h4>
         <ul>
-          <li><a href="shop-bestsellers.html">All Products</a></li>
-          <li><a href="shop-bestsellers.html">Bestsellers</a></li>
-          <li><a href="#">New arrivals</a></li>
-          <li><a href="#">Gift sets</a></li>
+          <li><a href="shop-bestsellers.php">All Products</a></li>
+          <li><a href="shop-bestsellers.php">Bestsellers</a></li>
+          <li><a href="skintype.php">Skintype</a></li>
+          <li><a href="shop-skincare.php">Skincare</a></li>
         </ul>
       </div>
 
@@ -199,9 +199,9 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
         <h4>Support</h4>
         <ul>
           <li><a href="Contact.php">Contact us</a></li>
-          <li><a href="AboutUs.html">About us</a></li>
-          <li><a href="Shipping.html">Shipping info</a></li>
-          <li><a href="#">Returns</a></li>
+          <li><a href="AboutUs.php">About us</a></li>
+          <li><a href="Shipping.php">Shipping info</a></li>
+          <li><a href="shop-bodycare.php">Bodycare</a></li>
         </ul>
       </div>
     </div>

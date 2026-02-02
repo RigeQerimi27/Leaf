@@ -103,6 +103,7 @@ $messages = $contactModel->all();
       <li><a href="admin-skintype.php">Skin Type</a></li>
       <li><a href="admin-users.php">Users</a></li>
        <li><a href="admin-orders.php">Orders</a></li>
+       <li><a href="logout.php">Logout</a></li>
     </ul>
   </aside>
 

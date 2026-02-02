@@ -69,43 +69,43 @@ $auth->requireAdmin();
       <div class="manage-card">
         <h3>Manage Homepage</h3>
         <p>Edit hero text, images & top picks.</p>
-        <a class="btn-outline" href="admin-homepage.html">Edit</a>
+        <a class="btn-outline" href="admin-homepage.php">Edit</a>
       </div>
 
       <div class="manage-card">
         <h3>Manage About</h3>
         <p>Update story, values & images.</p>
-        <a class="btn-outline" href="admin-about.html">Edit</a>
+        <a class="btn-outline" href="admin-about.php">Edit</a>
       </div>
 
       <div class="manage-card">
         <h3>Products</h3>
         <p>Add, edit or delete products.</p>
-        <a class="btn-green" href="admin-products.html">Manage</a>
+        <a class="btn-green" href="admin-products.php">Manage</a>
       </div>
 
       <div class="manage-card">
         <h3>Shipping</h3>
         <p>Shipping prices & zones.</p>
-        <a class="btn-outline" href="admin-shipping.html">Edit</a>
+        <a class="btn-outline" href="admin-shipping.php">Edit</a>
       </div>
 
       <div class="manage-card">
         <h3>Manage Skin Type</h3>
         <p>Edit hero text, quiz question & benefits.</p>
-        <a class="btn-outline" href="admin-skintype.html">Edit</a>
+        <a class="btn-outline" href="admin-skintype.php">Edit</a>
       </div>
 
       <div class="manage-card">
         <h3>Contact</h3>
         <p>Create contact info & view messages.</p>
-        <a class="btn-outline" href="admin-contact.html">Edit</a>
+        <a class="btn-outline" href="admin-contact.php">Edit</a>
       </div>
 
       <div class="manage-card">
   <h3>Users</h3>
   <p>Create , edit users & manage roles.</p>
-  <a class="btn-outline" href="admin-users.html">Edit</a>
+  <a class="btn-outline" href="admin-users.php">Edit</a>
 </div>
 
 <div class="manage-card">

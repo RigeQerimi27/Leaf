@@ -17,7 +17,6 @@ $homepage = new HomepageContent($conn);
 
 $message = null;
 
-$auth->requireAdmin();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
