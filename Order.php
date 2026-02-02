@@ -15,7 +15,7 @@ class Order
     {
         $stmt = $this->connection->prepare(
             "INSERT INTO orders (created_by, shipping_address_id, status, subtotal)
-             VALUES (?, ?, 'pending', ?)"
+             VALUES (?, ?, 'in process', ?)"
         );
 
         $stmt->bind_param('sid', $createdBy, $shippingAddressId, $subtotal);

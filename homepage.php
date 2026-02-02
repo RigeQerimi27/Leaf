@@ -162,19 +162,19 @@ $topPicksSub   = $data['top_picks_sub'] ?? "Explore our top picks, hand-selected
     <div class="info-card">
       <h3 class="card-title">Shop now</h3>
       <p class="card-text">Discover our full collection of luxury skincare.</p>
-      <a href="#" class="btn-light">Explore</a>
+      <a href="shop-bestsellers.php" class="btn-light">Explore</a>
     </div>
 
     <div class="info-card">
       <h3 class="card-title">Our Story</h3>
       <p class="card-text">Learn about our commitment to natural beauty.</p>
-      <a href="#" class="btn-light">Read more</a>
+      <a href="AboutUs.php" class="btn-light">Read more</a>
     </div>
 
     <div class="info-card">
       <h3 class="card-title">Get in touch</h3>
       <p class="card-text">Questions? We’re here to help you.</p>
-      <a href="#" class="btn-light">Contact</a>
+      <a href="Contact.php" class="btn-light">Contact</a>
     </div>
   </section>
 

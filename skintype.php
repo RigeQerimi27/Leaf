@@ -49,8 +49,8 @@ if (!$data) {
   
 
   <div class="icons">
-    <a href="#"><img src="icons/shopping cart.jpg" alt="Cart" /></a>
-    <a href="#"><img src="icons/user.jpg" alt="User" /></a>
+    <a href="cart-page.php"><img src="icons/shopping cart.jpg" alt="Cart" /></a>
+    <a href="logout.php"><img src="icons/user.jpg" alt="User" /></a>
   </div>
 </header>
 

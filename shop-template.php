@@ -57,7 +57,7 @@ $q = trim($_GET['q'] ?? '');
 
   <div class="icons">
     <a href="cart-page.php"><img src="icons/shopping cart.jpg" alt="Cart"></a>
-    <a href="#"><img src="icons/user.jpg" alt="User"></a>
+    <a href="logout.php"><img src="icons/user.jpg" alt="User"></a>
   </div>
 </header>
 

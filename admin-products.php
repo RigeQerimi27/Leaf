@@ -70,11 +70,7 @@ $dbName = getenv('DB_NAME') ?: 'projekti_web';
           </div>
 
           <div class="card stats">
-            <div>
-              <span class="stat-label">Total products</span>
-              <span class="stat-value"><?php echo (int)$totalProducts; ?></span>
-            </div>
-            <div>
+      
               <span class="stat-label">Database</span>
               <span class="stat-value"><?php echo htmlspecialchars($dbName); ?></span>
             </div>
