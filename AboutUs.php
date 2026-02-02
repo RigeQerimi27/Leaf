@@ -50,7 +50,7 @@ $feature4Text  = $data['feature4_text']  ?? 'Gentle yet effective...';
         <ul class="nav-links">
          
           <li><a href="homepage.php">Home</a></li>
-          <li><a href="shop-bestsellers.html">Shop</a></li>
+          <li><a href="shop-bestsellers.php">Shop</a></li>
 
         
           <li><a href="AboutUs.php">About</a></li>

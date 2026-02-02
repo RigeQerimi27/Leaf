@@ -357,8 +357,8 @@ margin-top: 6px;
   height: 10px;
 }
 
-@media (max-width: 992px) {
-
+@media (max-width: 900px) {
+  
   .navbar {                                                                                                                                  
     align-items: center;                                                        
     flex-wrap: wrap;                                                            
@@ -370,18 +370,6 @@ margin-top: 6px;
     font-size: 24px;                                                            
     white-space: nowrap;                                                        
     flex: 0 0 auto;                                                             
-  }
-
-  .search-bar {                                                                 
-    flex: 1 1 220px;                                                            
-    min-width: 160px;                                                           
-    max-width: none;                                                            
-    height: 34px;                                                            
-    padding-left: 14px;                                                       
-  }
-
-  .search-input {                                                               
-    font-size: 14px;                                                           
   }
 
   .icons {                                                                     
@@ -397,6 +385,16 @@ margin-top: 6px;
     flex: 0 0 auto;                                                             
   }
 
+    .contact-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
+  }
+
+  .contact-info {
+    text-align: center;
+    max-width: 100%;
+  }
   .nav-links {                                                                  
     flex-basis: 100%;                                                           
     width: 100%;                                                                
@@ -413,16 +411,6 @@ margin-top: 6px;
     font-size: 15px;                                                                                                                   
   }
 
-  .contact-section {
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 16px;
-  }
-
-  .contact-info {
-    text-align: center;
-    max-width: 100%;
-  }
 
   .footer {                                                                  
     display: flex;                                                             
@@ -506,6 +494,6 @@ margin-top: 6px;
     padding: 10px 12px;                                                      
     font-size: 11px;                                                          
     text-align: center;                                                        
-}                       
-}
+} 
+} 
 

@@ -323,8 +323,7 @@ margin-top: 6px;
 
 
 @media (max-width: 900px) {
-
-
+  
   .navbar {                                                                                                                                  
     align-items: center;                                                        
     flex-wrap: wrap;                                                            
@@ -336,18 +335,6 @@ margin-top: 6px;
     font-size: 24px;                                                            
     white-space: nowrap;                                                        
     flex: 0 0 auto;                                                             
-  }
-
-  .search-bar {                                                                 
-    flex: 1 1 220px;                                                            
-    min-width: 160px;                                                           
-    max-width: none;                                                            
-    height: 34px;                                                            
-    padding-left: 14px;                                                       
-  }
-
-  .search-input {                                                               
-    font-size: 14px;                                                           
   }
 
   .icons {                                                                     
@@ -376,11 +363,11 @@ margin-top: 6px;
   }
 
   .nav-links a {                                                               
-    font-size: 15px;   
-    
-    }
+    font-size: 15px;                                                                                                                   
+  }
 
-    .footer {                                                                  
+
+  .footer {                                                                  
     display: flex;                                                             
     flex-direction: column;                                                   
     gap: 12px;                                                                
@@ -462,6 +449,6 @@ margin-top: 6px;
     padding: 10px 12px;                                                      
     font-size: 11px;                                                          
     text-align: center;                                                        
-}                       
-
+} 
 }
+
